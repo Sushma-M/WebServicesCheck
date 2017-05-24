@@ -1,0 +1,162 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.quandl.basepath}",
+  "paths" : {
+    "/v1/datasets/CVR/ANGEL_SECTORS.json" : {
+      "x-WM-BASE_PATH" : "/v1/datasets/CVR/ANGEL_SECTORS.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "description" : "trim_end",
+          "name" : "trim_end",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "description" : "trim_start",
+          "name" : "trim_start",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "description" : "collapse",
+          "name" : "collapse",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "quandl_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.quandl.scheme}://${rest.quandl.host}${rest.quandl.basepath}/v1/datasets/CVR/ANGEL_SECTORS.json"
+    }
+  },
+  "host" : "${rest.quandl.host}",
+  "schemes" : [ "${rest.quandl.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "dataEntryItemROOTEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl.dataEntryItemROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "urlize_name" : {
+          "type" : "string"
+        },
+        "premium" : {
+          "type" : "boolean"
+        },
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "display_url" : {
+          "type" : "string"
+        },
+        "from_date" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "source_code" : {
+          "type" : "string"
+        },
+        "column_names" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "type" : "string"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "errors" : {
+          "$ref" : "#/definitions/errors"
+        },
+        "updated_at" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "to_date" : {
+          "type" : "string"
+        },
+        "source_name" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "code", "column_names", "data", "description", "display_url", "errors", "frequency", "from_date", "id", "name", "premium", "source_code", "source_name", "to_date", "type", "updated_at", "urlize_name" ]
+    },
+    "errors" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl.errors",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "dataEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "dataEntryItemROOT" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      },
+      "required" : [ "dataEntryItemROOT" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "51f2a6b1-6127-4e74-a3be-ffabca8eadaa",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "quandl",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

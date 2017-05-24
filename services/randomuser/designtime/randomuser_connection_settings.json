@@ -1,0 +1,33 @@
+{
+  "endpointAddress" : "https://randomuser.me/api/",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : {
+    "format" : "xml"
+  },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<user>\n\t<results>\n\t\t<gender>female</gender>\n\t\t<name>\n\t\t\t<title>miss</title>\n\t\t\t<first>meral</first>\n\t\t\t<last>antonissen</last>\n\t\t</name>\n\t\t<location>\n\t\t\t<street>5270 zadelstraat</street>\n\t\t\t<city>buren</city>\n\t\t\t<state>overijssel</state>\n\t\t\t<postcode>71310</postcode>\n\t\t</location>\n\t\t<email>meral.antonissen@example.com</email>\n\t\t<login>\n\t\t\t<username>brownfish405</username>\n\t\t\t<password>food</password>\n\t\t\t<salt>epabxBVU</salt>\n\t\t\t<md5>8e56217122b057e9952cedacbe3b3a95</md5>\n\t\t\t<sha1>7fbbca4901187cd7caa10beef50413ee9216c6a7</sha1>\n\t\t\t<sha256>1144728c6eb8ab6123a97c0863ca4912782cfb330277e143eca16b42ef456728</sha256>\n\t\t</login>\n\t\t<dob>1967-07-13 06:27:27</dob>\n\t\t<registered>2014-09-05 10:38:41</registered>\n\t\t<phone>(803)-260-7030</phone>\n\t\t<cell>(492)-754-9465</cell>\n\t\t<id>\n\t\t\t<name>BSN</name>\n\t\t\t<value>26246102</value>\n\t\t</id>\n\t\t<picture>\n\t\t\t<large>https://randomuser.me/api/portraits/women/66.jpg</large>\n\t\t\t<medium>https://randomuser.me/api/portraits/med/women/66.jpg</medium>\n\t\t\t<thumbnail>https://randomuser.me/api/portraits/thumb/women/66.jpg</thumbnail>\n\t\t</picture>\n\t\t<nat>NL</nat>\n\t</results>\n\t<info>\n\t\t<seed>bac96e92dadfcd46</seed>\n\t\t<results>1</results>\n\t\t<page>1</page>\n\t\t<version>1.1</version>\n\t</info>\n</user>",
+    "convertedResponse" : "{\"results\":{\"gender\":\"female\",\"name\":{\"title\":\"miss\",\"first\":\"meral\",\"last\":\"antonissen\"},\"location\":{\"street\":\"5270 zadelstraat\",\"city\":\"buren\",\"state\":\"overijssel\",\"postcode\":\"71310\"},\"email\":\"meral.antonissen@example.com\",\"login\":{\"username\":\"brownfish405\",\"password\":\"food\",\"salt\":\"epabxBVU\",\"md5\":\"8e56217122b057e9952cedacbe3b3a95\",\"sha1\":\"7fbbca4901187cd7caa10beef50413ee9216c6a7\",\"sha256\":\"1144728c6eb8ab6123a97c0863ca4912782cfb330277e143eca16b42ef456728\"},\"dob\":\"1967-07-13 06:27:27\",\"registered\":\"2014-09-05 10:38:41\",\"phone\":\"(803)-260-7030\",\"cell\":\"(492)-754-9465\",\"id\":{\"name\":\"BSN\",\"value\":\"26246102\"},\"picture\":{\"large\":\"https://randomuser.me/api/portraits/women/66.jpg\",\"medium\":\"https://randomuser.me/api/portraits/med/women/66.jpg\",\"thumbnail\":\"https://randomuser.me/api/portraits/thumb/women/66.jpg\"},\"nat\":\"NL\"},\"info\":{\"seed\":\"bac96e92dadfcd46\",\"results\":\"1\",\"page\":\"1\",\"version\":\"1.1\"}}",
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Mon, 22 May 2017 06:52:59 GMT" ],
+      "Content-Type" : [ "text/xml; charset=utf-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "Set-Cookie" : [ "__cfduid=d3d1d2ebe302359f0d3c12898181e1cd81495435979; expires=Tue, 22-May-18 06:52:59 GMT; path=/; domain=.randomuser.me; HttpOnly" ],
+      "X-Powered-By" : [ "Express" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Cache-Control" : [ "no-cache" ],
+      "ETag" : [ "W/\"4f3-z4jtaqVV8E0DNkKHPqWewA\"" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Server" : [ "cloudflare-nginx" ],
+      "CF-RAY" : [ "362ddb187d2023cc-IAD" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

@@ -1,0 +1,61 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.reimaginebanking_delete.basepath}",
+  "paths" : {
+    "/accounts/{account}" : {
+      "x-WM-BASE_PATH" : "/accounts/{account}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "delete" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "parameters" : [ {
+          "description" : "key",
+          "name" : "key",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "name" : "account",
+          "type" : "string",
+          "required" : true,
+          "in" : "path"
+        } ],
+        "consumes" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "reimaginebanking_delete_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.reimaginebanking_delete.scheme}://${rest.reimaginebanking_delete.host}${rest.reimaginebanking_delete.basepath}/accounts/{account}"
+    }
+  },
+  "host" : "${rest.reimaginebanking_delete.host}",
+  "schemes" : [ "${rest.reimaginebanking_delete.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_delete.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "1395d7a4-22f5-4e3d-a0f7-c30976e25da5",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "reimaginebanking",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

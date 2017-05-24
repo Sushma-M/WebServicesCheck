@@ -1,0 +1,29 @@
+{
+  "endpointAddress" : "http://e1d52cdf10bc.live.wavemakeronline.com/PrefabCheck/services/classicmodels/procedureExecutor/procedure/execute/getEmployee",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"content\":[{\"employeeNumber\":1002,\"lastName\":\"Murphy\",\"firstName\":\"Diane\",\"email\":\"dmurphy@classicmodelcars.com\",\"extension\":\"x5800\",\"jobTitle\":\"President\"},{\"employeeNumber\":1056,\"lastName\":\"Patterson\",\"firstName\":\"Mary\",\"email\":\"mpatterso@classicmodelcars.com\",\"extension\":\"x4611\",\"jobTitle\":\"VP Sales\"},{\"employeeNumber\":1076,\"lastName\":\"Firrelli\",\"firstName\":\"Jeff\",\"email\":\"jfirrelli@classicmodelcars.com\",\"extension\":\"x9273\",\"jobTitle\":\"VP Marketing\"},{\"employeeNumber\":1088,\"lastName\":\"Patterson\",\"firstName\":\"William\",\"email\":\"wpatterson@classicmodelcars.com\",\"extension\":\"x4871\",\"jobTitle\":\"Sales Manager (APAC)\"},{\"employeeNumber\":1102,\"lastName\":\"Bondur\",\"firstName\":\"Gerard\",\"email\":\"gbondur@classicmodelcars.com\",\"extension\":\"x5408\",\"jobTitle\":\"Sale Manager (EMEA)\"},{\"employeeNumber\":1143,\"lastName\":\"Bow\",\"firstName\":\"Anthony\",\"email\":\"abow@classicmodelcars.com\",\"extension\":\"x5428\",\"jobTitle\":\"Sales Manager (NA)\"},{\"employeeNumber\":1165,\"lastName\":\"Jennings\",\"firstName\":\"Leslie\",\"email\":\"ljennings@classicmodelcars.com\",\"extension\":\"x3291\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1166,\"lastName\":\"Thompson\",\"firstName\":\"Leslie\",\"email\":\"lthompson@classicmodelcars.com\",\"extension\":\"x4065\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1188,\"lastName\":\"Firrelli\",\"firstName\":\"Julie\",\"email\":\"jfirrelli@classicmodelcars.com\",\"extension\":\"x2173\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1216,\"lastName\":\"Patterson\",\"firstName\":\"Steve\",\"email\":\"spatterson@classicmodelcars.com\",\"extension\":\"x4334\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1286,\"lastName\":\"Tseng\",\"firstName\":\"Foon Yue\",\"email\":\"ftseng@classicmodelcars.com\",\"extension\":\"x2248\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1323,\"lastName\":\"Vanauf\",\"firstName\":\"George\",\"email\":\"gvanauf@classicmodelcars.com\",\"extension\":\"x4102\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1337,\"lastName\":\"Bondur\",\"firstName\":\"Loui\",\"email\":\"lbondur@classicmodelcars.com\",\"extension\":\"x6493\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1370,\"lastName\":\"Hernandez\",\"firstName\":\"Gerard\",\"email\":\"ghernande@classicmodelcars.com\",\"extension\":\"x2028\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1401,\"lastName\":\"Castillo\",\"firstName\":\"Pamela\",\"email\":\"pcastillo@classicmodelcars.com\",\"extension\":\"x2759\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1501,\"lastName\":\"Bott\",\"firstName\":\"Larry\",\"email\":\"lbott@classicmodelcars.com\",\"extension\":\"x2311\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1504,\"lastName\":\"Jones\",\"firstName\":\"Barry\",\"email\":\"bjones@classicmodelcars.com\",\"extension\":\"x102\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1611,\"lastName\":\"Fixter\",\"firstName\":\"Andy\",\"email\":\"afixter@classicmodelcars.com\",\"extension\":\"x101\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1612,\"lastName\":\"Marsh\",\"firstName\":\"Peter\",\"email\":\"pmarsh@classicmodelcars.com\",\"extension\":\"x102\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1619,\"lastName\":\"King\",\"firstName\":\"Tom\",\"email\":\"tking@classicmodelcars.com\",\"extension\":\"x103\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1621,\"lastName\":\"Nishi\",\"firstName\":\"Mami\",\"email\":\"mnishi@classicmodelcars.com\",\"extension\":\"x101\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1625,\"lastName\":\"Kato\",\"firstName\":\"Yoshimi\",\"email\":\"ykato@classicmodelcars.com\",\"extension\":\"x102\",\"jobTitle\":\"Sales Rep\"},{\"employeeNumber\":1702,\"lastName\":\"Gerard\",\"firstName\":\"Martin\",\"email\":\"mgerard@classicmodelcars.com\",\"extension\":\"x2312\",\"jobTitle\":\"Sales Rep\"}]}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "Apache-Coyote/1.1" ],
+      "Cache-Control" : [ "max-age=0" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "ETag" : [ "\"0943d7209c7db6b87633be052b86bfb64\"" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Content-Length" : [ "3422" ],
+      "Date" : [ "Wed, 24 May 2017 06:33:50 GMT" ],
+      "Connection" : [ "keep-alive" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

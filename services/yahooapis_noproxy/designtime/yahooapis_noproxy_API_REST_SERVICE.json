@@ -1,0 +1,78 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "4ad0c020-2501-4a8e-be3c-a9b0f1e42992",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-SERVICE_ID" : "yahooapis2",
+    "x-WM-USE_PROXY_FOR_MOBILE" : false
+  },
+  "host" : "query.yahooapis.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/yahooapis_noproxy/invoke/public/yql" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "yahooapis_noproxy_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "parameters" : [ {
+          "name" : "q",
+          "in" : "query",
+          "description" : "q",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/yahooapis_noproxy/invoke/public/yql",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.yahooapis_noproxy.scheme}://${rest.yahooapis_noproxy.host}${rest.yahooapis_noproxy.basepath}/public/yql"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "results", "xmlns:yahoo", "yahoo:count", "yahoo:created", "yahoo:lang" ],
+      "properties" : {
+        "yahoo:count" : {
+          "type" : "string"
+        },
+        "results" : {
+          "$ref" : "#/definitions/results"
+        },
+        "yahoo:created" : {
+          "type" : "string"
+        },
+        "yahoo:lang" : {
+          "type" : "string"
+        },
+        "xmlns:yahoo" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis_noproxy.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "results" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis_noproxy.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

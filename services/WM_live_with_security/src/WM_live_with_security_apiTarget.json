@@ -1,0 +1,76 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.WM_live_with_security.basepath}",
+  "paths" : {
+    "/services/myJava/returnJSONData" : {
+      "x-WM-BASE_PATH" : "/services/myJava/returnJSONData",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "WM_live_with_security_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.WM_live_with_security.scheme}://${rest.WM_live_with_security.host}${rest.WM_live_with_security.basepath}/services/myJava/returnJSONData"
+    }
+  },
+  "host" : "${rest.WM_live_with_security.host}",
+  "schemes" : [ "${rest.WM_live_with_security.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_with_security.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "balance" : {
+          "format" : "double",
+          "type" : "number"
+        },
+        "num" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "is_vip" : {
+          "type" : "boolean"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "balance", "is_vip", "name", "nickname", "num" ]
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "3d332438-e938-40bb-8465-2f033ff6f9bf",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "live",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

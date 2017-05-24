@@ -1,0 +1,112 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.fda_chart.basepath}",
+  "paths" : {
+    "/event.json" : {
+      "x-WM-BASE_PATH" : "/event.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "description" : "count",
+          "name" : "count",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "description" : "search",
+          "name" : "search",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "fda_chart_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.fda_chart.scheme}://${rest.fda_chart.host}${rest.fda_chart.basepath}/event.json"
+    }
+  },
+  "host" : "${rest.fda_chart.host}",
+  "schemes" : [ "${rest.fda_chart.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "fda_chart.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "results" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/resultsEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "meta" : {
+          "$ref" : "#/definitions/meta"
+        }
+      },
+      "required" : [ "meta", "results" ]
+    },
+    "resultsEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "fda_chart.resultsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "count" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "term" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "count", "term" ]
+    },
+    "meta" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "fda_chart.meta",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "disclaimer" : {
+          "type" : "string"
+        },
+        "terms" : {
+          "type" : "string"
+        },
+        "last_updated" : {
+          "type" : "string"
+        },
+        "license" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "disclaimer", "last_updated", "license", "terms" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "35396ca4-ca62-4064-b0b4-2fcfc8894b27",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "fda",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

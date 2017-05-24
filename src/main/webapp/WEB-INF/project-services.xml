@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <import resource="classpath:FileService.spring.xml"/>
+    <import resource="classpath:WM_live_multipart.spring.xml"/>
+    <import resource="classpath:WM_live_with_proxy.spring.xml"/>
+    <import resource="classpath:WM_live_with_security.spring.xml"/>
+    <import resource="classpath:emailValidator.spring.xml"/>
+    <import resource="classpath:fda_chart.spring.xml"/>
+    <import resource="classpath:google_atom.spring.xml"/>
+    <import resource="classpath:googleapis.spring.xml"/>
+    <import resource="classpath:googleapis_json.spring.xml"/>
+    <import resource="classpath:googleapis_type.spring.xml"/>
+    <import resource="classpath:iconfinder.spring.xml"/>
+    <import resource="classpath:pdf2image.spring.xml"/>
+    <import resource="classpath:quandl.spring.xml"/>
+    <import resource="classpath:randomuser.spring.xml"/>
+    <import resource="classpath:randomuser2.spring.xml"/>
+    <import resource="classpath:rechtspraak.spring.xml"/>
+    <import resource="classpath:reimaginebanking_delete.spring.xml"/>
+    <import resource="classpath:reimaginebanking_post.spring.xml"/>
+    <import resource="classpath:reimaginebanking_put.spring.xml"/>
     <import resource="classpath:securityService.spring.xml"/>
+    <import resource="classpath:web2pdf.spring.xml"/>
+    <import resource="classpath:yahooapis.spring.xml"/>
+    <import resource="classpath:yahooapis_noproxy.spring.xml"/>
 </beans>

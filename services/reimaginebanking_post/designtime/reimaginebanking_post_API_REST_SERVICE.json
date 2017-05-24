@@ -1,0 +1,133 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "70839e36-a949-4bfe-9a8b-21f21e9b2d99",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "reimaginebanking",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "api.reimaginebanking.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/reimaginebanking_post/invoke/56c66be5a73e492741507362/accounts" : {
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "reimaginebanking_post_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object"
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "key",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/reimaginebanking_post/invoke/56c66be5a73e492741507362/accounts",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.reimaginebanking_post.scheme}://${rest.reimaginebanking_post.host}${rest.reimaginebanking_post.basepath}/56c66be5a73e492741507362/accounts"
+    }
+  },
+  "definitions" : {
+    "RootRequest" : {
+      "required" : [ "account_number", "balance", "nickname", "rewards", "type" ],
+      "properties" : {
+        "balance" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "account_number" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "rewards" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_post.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "required" : [ "code", "message", "objectCreated" ],
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "objectCreated" : {
+          "$ref" : "#/definitions/objectCreated"
+        },
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_post.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "objectCreated" : {
+      "required" : [ "_id", "account_number", "balance", "customer_id", "nickname", "rewards", "type" ],
+      "properties" : {
+        "balance" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "account_number" : {
+          "type" : "string"
+        },
+        "_id" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "rewards" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "customer_id" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_post.objectCreated",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

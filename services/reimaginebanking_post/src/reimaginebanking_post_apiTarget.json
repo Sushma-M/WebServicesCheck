@@ -1,0 +1,133 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.reimaginebanking_post.basepath}",
+  "paths" : {
+    "/56c66be5a73e492741507362/accounts" : {
+      "x-WM-BASE_PATH" : "/56c66be5a73e492741507362/accounts",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "description" : "RequestBody",
+          "name" : "RequestBody",
+          "required" : false,
+          "in" : "body"
+        }, {
+          "description" : "key",
+          "name" : "key",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "reimaginebanking_post_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.reimaginebanking_post.scheme}://${rest.reimaginebanking_post.host}${rest.reimaginebanking_post.basepath}/56c66be5a73e492741507362/accounts"
+    }
+  },
+  "host" : "${rest.reimaginebanking_post.host}",
+  "schemes" : [ "${rest.reimaginebanking_post.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_post.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        },
+        "objectCreated" : {
+          "$ref" : "#/definitions/objectCreated"
+        },
+        "code" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      },
+      "required" : [ "code", "message", "objectCreated" ]
+    },
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_post.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "balance" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "account_number" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "rewards" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "account_number", "balance", "nickname", "rewards", "type" ]
+    },
+    "objectCreated" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_post.objectCreated",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "balance" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "_id" : {
+          "type" : "string"
+        },
+        "account_number" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "rewards" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "customer_id" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "_id", "account_number", "balance", "customer_id", "nickname", "rewards", "type" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "70839e36-a949-4bfe-9a8b-21f21e9b2d99",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "reimaginebanking",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

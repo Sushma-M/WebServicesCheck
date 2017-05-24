@@ -1,0 +1,76 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "3d332438-e938-40bb-8465-2f033ff6f9bf",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "live",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "e1d52cdf10bc.live.wavemakeronline.com",
+  "basePath" : "/AllVariableTypes",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/services/myJava/returnJSONData" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "WM_live_with_security_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-BASE_PATH" : "/services/myJava/returnJSONData",
+      "x-WM-COMPLETE_PATH" : "${rest.WM_live_with_security.scheme}://${rest.WM_live_with_security.host}${rest.WM_live_with_security.basepath}/services/myJava/returnJSONData",
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "balance", "is_vip", "name", "nickname", "num" ],
+      "properties" : {
+        "balance" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "num" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "is_vip" : {
+          "type" : "boolean"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_with_security.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

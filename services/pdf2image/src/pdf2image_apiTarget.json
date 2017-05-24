@@ -1,0 +1,113 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.pdf2image.basepath}",
+  "paths" : {
+    "/" : {
+      "x-WM-BASE_PATH" : "/",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "text/html" ],
+        "parameters" : [ {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "items" : {
+            "type" : "string"
+          },
+          "description" : "X-Mashape-Key",
+          "name" : "X-Mashape-Key",
+          "x-WM-EDITABLE" : true,
+          "type" : "string",
+          "required" : false,
+          "in" : "header"
+        }, {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "org.springframework.web.multipart.MultipartFile",
+          "items" : {
+            "type" : "file"
+          },
+          "name" : "file",
+          "x-WM-EDITABLE" : true,
+          "type" : "array",
+          "required" : false,
+          "in" : "formData"
+        }, {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "name" : "res",
+          "x-WM-EDITABLE" : true,
+          "type" : "string",
+          "required" : false,
+          "in" : "formData"
+        }, {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "name" : "output",
+          "x-WM-EDITABLE" : true,
+          "type" : "string",
+          "required" : false,
+          "in" : "formData"
+        } ],
+        "consumes" : [ "multipart/form-data" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "pdf2image_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.pdf2image.scheme}://${rest.pdf2image.host}${rest.pdf2image.basepath}/"
+    }
+  },
+  "host" : "${rest.pdf2image.host}",
+  "schemes" : [ "${rest.pdf2image.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "pdf2image.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "body" : {
+          "$ref" : "#/definitions/body"
+        }
+      },
+      "required" : [ "body" ]
+    },
+    "body" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "pdf2image.body",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "img" : {
+          "$ref" : "#/definitions/img"
+        }
+      },
+      "required" : [ "img" ]
+    },
+    "img" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "pdf2image.img",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "alt" : {
+          "type" : "string"
+        },
+        "src" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "alt", "src" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "d69f6b9c-2926-4fec-9997-fec7b0ff6302",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "p",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "endpointAddress" : "http://e1d52cdf10bc.live.wavemakeronline.com/AllVariableTypes/services/file/uploadFile",
+  "method" : "POST",
+  "requestBody" : "",
+  "headers" : {
+    "Authorization" : [ "Basic YWRtaW46YWRtaW4=" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "[{\"path\":\"http://e1d52cdf10bc.live.wavemakeronline.com/AllVariableTypes/services/file/downloadFile?file=Query.txt&returnName=Query.txt\",\"fileName\":\"Query.txt\",\"length\":1557,\"success\":true,\"errorMessage\":\"\"}]",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "Apache-Coyote/1.1" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Set-Cookie" : [ "JSESSIONID=0650E3E9BB29CA6AE30A0EE1BADB0576; Path=/AllVariableTypes" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Date" : [ "Wed, 24 May 2017 06:44:56 GMT" ],
+      "Connection" : [ "keep-alive" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "BASIC",
+  "contentType" : "multipart/form-data",
+  "multiParamInfoList" : [ {
+    "type" : "FILE",
+    "name" : "files",
+    "list" : true,
+    "testValue" : null,
+    "contentType" : null
+  } ]
+}

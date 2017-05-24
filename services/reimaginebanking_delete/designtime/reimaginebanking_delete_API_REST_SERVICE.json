@@ -1,0 +1,61 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "1395d7a4-22f5-4e3d-a0f7-c30976e25da5",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "reimaginebanking",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "api.reimaginebanking.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/reimaginebanking_delete/invoke/accounts/{account}" : {
+      "delete" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "reimaginebanking_delete_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "key",
+          "in" : "query",
+          "description" : "key",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "account",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/reimaginebanking_delete/invoke/accounts/{account}",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.reimaginebanking_delete.scheme}://${rest.reimaginebanking_delete.host}${rest.reimaginebanking_delete.basepath}/accounts/{account}"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "reimaginebanking_delete.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

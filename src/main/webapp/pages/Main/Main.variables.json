@@ -1,1 +1,681 @@
-{ }
+{
+  "emailValidatorInvoke" : {
+    "_id" : "wm-emailValidatorInvoke-wm.ServiceVariable-1495436797212",
+    "name" : "emailValidatorInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "X-Mashape-Key",
+      "value" : [ "1f5LBkHtXOmshmtmVW6iGv5OaoDJp1Q2FdZjsnVGCKMT83iefC" ],
+      "type" : "string"
+    }, {
+      "target" : "email",
+      "value" : "bind:Widgets.emailtext.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "emailValidator.RootResponse",
+    "service" : "emailValidator",
+    "operation" : "invoke",
+    "operationId" : "emailValidator_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "Fda_chartInvoke" : {
+    "_id" : "wm-Fda_chartInvoke-wm.ServiceVariable-1495522652483",
+    "name" : "Fda_chartInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "count",
+      "value" : "patient.reaction.reactionmeddrapt.exact",
+      "type" : "string"
+    }, {
+      "target" : "search",
+      "value" : "patient.drug.openfda.pharm_class_epc:\"nonsteroidal+anti-inflammatory+drug\"",
+      "type" : "string"
+    } ],
+    "type" : "fda_chart.RootResponse",
+    "service" : "fda_chart",
+    "operation" : "invoke",
+    "operationId" : "fda_chart_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "Google_atomInvoke" : {
+    "_id" : "wm-Google_atomInvoke-wm.ServiceVariable-1495199241834",
+    "name" : "Google_atomInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "wm_auth_username",
+      "value" : "wavemaker.apps@gmail.com"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "pramati123"
+    } ],
+    "type" : "google_atom.RootResponse",
+    "service" : "google_atom",
+    "operation" : "invoke",
+    "operationId" : "google_atom_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Google_atomInvokeonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "Googleapis_jsonInvoke" : {
+    "_id" : "wm-Googleapis_jsonInvoke-wm.ServiceVariable-1495177293161",
+    "name" : "Googleapis_jsonInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "sensor",
+      "value" : "false",
+      "type" : "string"
+    }, {
+      "target" : "origin",
+      "value" : "Toronto",
+      "type" : "string"
+    }, {
+      "target" : "destination",
+      "value" : "Montreal",
+      "type" : "string"
+    } ],
+    "type" : "googleapis_json.RootResponse",
+    "service" : "googleapis_json",
+    "operation" : "invoke",
+    "operationId" : "googleapis_json_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Googleapis_jsonInvokeonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "googleapis_typeInvoke" : {
+    "_id" : "wm-googleapis_typeInvoke-wm.ServiceVariable-1495184868662",
+    "name" : "googleapis_typeInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "sensor",
+      "value" : "false",
+      "type" : "string"
+    }, {
+      "target" : "origin",
+      "value" : "Toronto",
+      "type" : "string"
+    }, {
+      "target" : "destination",
+      "value" : "Montreal",
+      "type" : "string"
+    }, {
+      "target" : "format",
+      "value" : "bind:Widgets.formatToggle1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "googleapis_type.RootResponse",
+    "service" : "googleapis_type",
+    "operation" : "invoke",
+    "operationId" : "googleapis_type_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "googleapis_typeInvokeonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "GoogleapisInvoke" : {
+    "_id" : "wm-GoogleapisInvoke-wm.ServiceVariable-1495176093343",
+    "name" : "GoogleapisInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "sensor",
+      "value" : "false",
+      "type" : "string"
+    }, {
+      "target" : "origin",
+      "value" : "bind:Widgets.SourceRadioset1.displayValue",
+      "type" : "string"
+    }, {
+      "target" : "destination",
+      "value" : "bind:Widgets.DestinationRadioset2.displayValue",
+      "type" : "string"
+    } ],
+    "type" : "googleapis.RootResponse",
+    "service" : "googleapis",
+    "operation" : "invoke",
+    "operationId" : "googleapis_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "GoogleapisInvokeonSuccess($event, $scope)",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "iconfinderInvoke" : {
+    "_id" : "wm-iconfinderInvoke-wm.ServiceVariable-1495524062557",
+    "name" : "iconfinderInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "iconfinder.RootResponse",
+    "service" : "iconfinder",
+    "operation" : "invoke",
+    "operationId" : "iconfinder_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "Pdf2imageInvoke" : {
+    "_id" : "wm-Pdf2imageInvoke-wm.ServiceVariable-1495523623572",
+    "name" : "Pdf2imageInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "X-Mashape-Key",
+      "value" : [ "1f5LBkHtXOmshmtmVW6iGv5OaoDJp1Q2FdZjsnVGCKMT83iefC" ],
+      "type" : "string"
+    }, {
+      "isList" : true,
+      "target" : "file",
+      "value" : "bind:Widgets.fileupload1.selectedFiles",
+      "type" : "file"
+    }, {
+      "target" : "res",
+      "value" : "bind:72",
+      "type" : "string"
+    }, {
+      "target" : "output",
+      "value" : "bind:\"html\"",
+      "type" : "string"
+    } ],
+    "type" : "pdf2image.RootResponse",
+    "service" : "pdf2image",
+    "operation" : "invoke",
+    "operationId" : "pdf2image_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "QuandlInvoke" : {
+    "_id" : "wm-QuandlInvoke-wm.ServiceVariable-1495522124586",
+    "name" : "QuandlInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "trim_end",
+      "value" : "2012-12-31",
+      "type" : "string"
+    }, {
+      "target" : "trim_start",
+      "value" : "2002-12-31",
+      "type" : "string"
+    }, {
+      "target" : "collapse",
+      "value" : "annual",
+      "type" : "string"
+    } ],
+    "type" : "quandl.RootResponse",
+    "service" : "quandl",
+    "operation" : "invoke",
+    "operationId" : "quandl_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "columnField" : "column_names",
+    "dataField" : "data",
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : true,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual",
+    "transformationColumns" : [ "Date", "Software", "Healthcare", "Hardware", "Biotech", "TELECOM", "Manufacturing", "Financial_Products_and_Services", "IT_Services", "Industrial_Energy", "Retail", "Media" ]
+  },
+  "Randomuser2Invoke" : {
+    "_id" : "wm-Randomuser2Invoke-wm.ServiceVariable-1495522542937",
+    "name" : "Randomuser2Invoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "randomuser2.RootResponse",
+    "service" : "randomuser2",
+    "operation" : "invoke",
+    "operationId" : "randomuser2_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "RandomuserInvoke" : {
+    "_id" : "wm-RandomuserInvoke-wm.ServiceVariable-1495436091577",
+    "name" : "RandomuserInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "format",
+      "value" : "xml",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "randomuser.RootResponse",
+    "service" : "randomuser",
+    "operation" : "invoke",
+    "operationId" : "randomuser_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "RechtspraakInvoke" : {
+    "_id" : "wm-RechtspraakInvoke-wm.ServiceVariable-1495524718864",
+    "name" : "RechtspraakInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "date",
+      "value" : "2011-05-01",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "type",
+      "value" : "uitspraak",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "rechtspraak.RootResponse",
+    "service" : "rechtspraak",
+    "operation" : "invoke",
+    "operationId" : "rechtspraak_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "reimaginebanking_delete" : {
+    "_id" : "wm-reimaginebanking_delete-wm.ServiceVariable-1495521352266",
+    "name" : "reimaginebanking_delete",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "key",
+      "value" : "474f2287549cc0cb85e35fa917dea222",
+      "type" : "string"
+    }, {
+      "target" : "account",
+      "value" : "bind:Widgets.account_number3.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "reimaginebanking_delete.RootResponse",
+    "service" : "reimaginebanking_delete",
+    "operation" : "invoke",
+    "operationId" : "reimaginebanking_delete_RestServiceVirtualController-invoke",
+    "operationType" : "delete",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "Reimaginebanking_postInvoke" : {
+    "_id" : "wm-Reimaginebanking_postInvoke-wm.ServiceVariable-1495434597234",
+    "name" : "Reimaginebanking_postInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "key",
+      "value" : "474f2287549cc0cb85e35fa917dea222",
+      "type" : "string"
+    }, {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n  \"type\": \"Credit Card\",\n  \"nickname\": \"string\",\n  \"rewards\": 0,\n  \"balance\": 0,\n  \"account_number\": \"stringstringstri\"\n}",
+      "type" : "reimaginebanking_post.RootRequest"
+    }, {
+      "target" : "RequestBody.account_number",
+      "value" : "bind:Widgets.account_number1.datavalue"
+    }, {
+      "target" : "RequestBody.balance",
+      "value" : "bind:Widgets.balance.datavalue"
+    }, {
+      "target" : "RequestBody.nickname",
+      "value" : "bind:Widgets.nickname.datavalue"
+    }, {
+      "target" : "RequestBody.rewards",
+      "value" : "bind:Widgets.rewards.datavalue"
+    }, {
+      "target" : "RequestBody.type",
+      "value" : "bind:Widgets.account_type.datavalue"
+    } ],
+    "type" : "reimaginebanking_post.RootResponse",
+    "service" : "reimaginebanking_post",
+    "operation" : "invoke",
+    "operationId" : "reimaginebanking_post_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "Reimaginebanking_putInvoke" : {
+    "_id" : "wm-Reimaginebanking_putInvoke-wm.ServiceVariable-1495435167044",
+    "name" : "Reimaginebanking_putInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "key",
+      "value" : "474f2287549cc0cb85e35fa917dea222",
+      "type" : "string"
+    }, {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n  \"nickname\": \"string\",\n  \"account_number\": \"stringstringstri\"\n}",
+      "type" : "reimaginebanking_put.RootRequest"
+    }, {
+      "target" : "RequestBody.account_number",
+      "value" : "bind:Widgets.account_number2.datavalue"
+    }, {
+      "target" : "RequestBody.nickname",
+      "value" : "bind:Widgets.nickname2.datavalue"
+    } ],
+    "type" : "reimaginebanking_put.RootResponse",
+    "service" : "reimaginebanking_put",
+    "operation" : "invoke",
+    "operationId" : "reimaginebanking_put_RestServiceVirtualController-invoke",
+    "operationType" : "put",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "web2pdfInvoke" : {
+    "_id" : "wm-web2pdfInvoke-wm.ServiceVariable-1495524297348",
+    "name" : "web2pdfInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "X-Mashape-Key",
+      "value" : "1f5LBkHtXOmshmtmVW6iGv5OaoDJp1Q2FdZjsnVGCKMT83iefC",
+      "type" : "string"
+    }, {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "bind:\"Background=false&ConversionDelay=2&CUrl=https://www.google.com/&MarginBottom=10&MarginLeft=5&MarginRight=5&MarginTop=10&PageOrientation=portrait&PageSize=a4&Scripts=false\" ",
+      "type" : "web2pdf.RootRequest"
+    }, {
+      "target" : "ApiKey",
+      "value" : "bind:844856314",
+      "type" : "string"
+    } ],
+    "type" : "web2pdf.RootResponse",
+    "service" : "web2pdf",
+    "operation" : "invoke",
+    "operationId" : "web2pdf_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "WM_live_multipartInvoke" : {
+    "_id" : "wm-WM_live_multipartInvoke-wm.ServiceVariable-1495608547836",
+    "name" : "WM_live_multipartInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload2.selectedFiles",
+      "type" : "file"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "admin"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "admin"
+    } ],
+    "type" : "WM_live_multipart.RootResponseROOTEntryItem",
+    "service" : "WM_live_multipart",
+    "operation" : "invoke",
+    "operationId" : "WM_live_multipart_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "WM_live_with_proxyInvoke" : {
+    "_id" : "wm-WM_live_with_proxyInvoke-wm.ServiceVariable-1495608471950",
+    "name" : "WM_live_with_proxyInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "WM_live_with_proxy.RootResponse",
+    "service" : "WM_live_with_proxy",
+    "operation" : "invoke",
+    "operationId" : "WM_live_with_proxy_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "WM_live_with_securityInvoke" : {
+    "_id" : "wm-WM_live_with_securityInvoke-wm.ServiceVariable-1495606679405",
+    "name" : "WM_live_with_securityInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "wm_auth_username",
+      "value" : "admin"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "admin"
+    } ],
+    "type" : "WM_live_with_security.RootResponse",
+    "service" : "WM_live_with_security",
+    "operation" : "invoke",
+    "operationId" : "WM_live_with_security_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "Yahooapis_noproxyInvoke" : {
+    "_id" : "wm-Yahooapis_noproxyInvoke-wm.ServiceVariable-1495523336519",
+    "name" : "Yahooapis_noproxyInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "select * from geo.counties where place=\"CA\"",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "yahooapis_noproxy.RootResponse",
+    "service" : "yahooapis_noproxy",
+    "operation" : "invoke",
+    "operationId" : "yahooapis_noproxy_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "YahooapisInvoke" : {
+    "_id" : "wm-YahooapisInvoke-wm.ServiceVariable-1495523013125",
+    "name" : "YahooapisInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "q",
+      "value" : "select * from yahoo.finance.industry where id=\"736\"",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "env",
+      "value" : "store://datatables.org/alltableswithkeys",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "diagnostics",
+      "value" : "false",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "yahooapis.RootResponse",
+    "service" : "yahooapis",
+    "operation" : "invoke",
+    "operationId" : "yahooapis_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  }
+}

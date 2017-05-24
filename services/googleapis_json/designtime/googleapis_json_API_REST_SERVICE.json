@@ -1,0 +1,355 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "200ddbb0-7949-4a30-8f25-da52b8bab7ef",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "googleapis2",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "maps.googleapis.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/googleapis_json/invoke/api/directions/json" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "googleapis_json_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "sensor",
+          "in" : "query",
+          "description" : "sensor",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "origin",
+          "in" : "query",
+          "description" : "origin",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "destination",
+          "in" : "query",
+          "description" : "destination",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/googleapis_json/invoke/api/directions/json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.googleapis_json.scheme}://${rest.googleapis_json.host}${rest.googleapis_json.basepath}/api/directions/json"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "geocoded_waypoints", "routes", "status" ],
+      "properties" : {
+        "geocoded_waypoints" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/geocoded_waypointsEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "routes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/routesEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "end_location" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.end_location",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "legsEntryItem" : {
+      "required" : [ "distance", "duration", "end_address", "end_location", "start_address", "start_location", "steps", "traffic_speed_entry", "via_waypoint" ],
+      "properties" : {
+        "distance" : {
+          "$ref" : "#/definitions/distance"
+        },
+        "duration" : {
+          "$ref" : "#/definitions/duration"
+        },
+        "end_location" : {
+          "$ref" : "#/definitions/end_location"
+        },
+        "start_address" : {
+          "type" : "string"
+        },
+        "end_address" : {
+          "type" : "string"
+        },
+        "start_location" : {
+          "$ref" : "#/definitions/start_location"
+        },
+        "traffic_speed_entry" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "via_waypoint" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "steps" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/stepsEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.legsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "start_location" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.start_location",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "stepsEntryItem" : {
+      "required" : [ "distance", "duration", "end_location", "html_instructions", "maneuver", "polyline", "start_location", "travel_mode" ],
+      "properties" : {
+        "distance" : {
+          "$ref" : "#/definitions/distance"
+        },
+        "duration" : {
+          "$ref" : "#/definitions/duration"
+        },
+        "html_instructions" : {
+          "type" : "string"
+        },
+        "end_location" : {
+          "$ref" : "#/definitions/end_location"
+        },
+        "polyline" : {
+          "$ref" : "#/definitions/polyline"
+        },
+        "start_location" : {
+          "$ref" : "#/definitions/start_location"
+        },
+        "maneuver" : {
+          "type" : "string"
+        },
+        "travel_mode" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.stepsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "northeast" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.northeast",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "overview_polyline" : {
+      "required" : [ "points" ],
+      "properties" : {
+        "points" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.overview_polyline",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "bounds" : {
+      "required" : [ "northeast", "southwest" ],
+      "properties" : {
+        "southwest" : {
+          "$ref" : "#/definitions/southwest"
+        },
+        "northeast" : {
+          "$ref" : "#/definitions/northeast"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.bounds",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "duration" : {
+      "required" : [ "text", "value" ],
+      "properties" : {
+        "text" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.duration",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "distance" : {
+      "required" : [ "text", "value" ],
+      "properties" : {
+        "text" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.distance",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "routesEntryItem" : {
+      "required" : [ "bounds", "copyrights", "legs", "overview_polyline", "summary", "warnings", "waypoint_order" ],
+      "properties" : {
+        "bounds" : {
+          "$ref" : "#/definitions/bounds"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "copyrights" : {
+          "type" : "string"
+        },
+        "waypoint_order" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "legs" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/legsEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "overview_polyline" : {
+          "$ref" : "#/definitions/overview_polyline"
+        },
+        "warnings" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.routesEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "polyline" : {
+      "required" : [ "points" ],
+      "properties" : {
+        "points" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.polyline",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "southwest" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.southwest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "geocoded_waypointsEntryItem" : {
+      "required" : [ "geocoder_status", "place_id", "types" ],
+      "properties" : {
+        "place_id" : {
+          "type" : "string"
+        },
+        "geocoder_status" : {
+          "type" : "string"
+        },
+        "types" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_json.geocoded_waypointsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

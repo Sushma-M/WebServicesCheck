@@ -1,0 +1,104 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "3eb0ce55-495e-47ef-8ce9-93ba1cf426c8",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "live",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "e1d52cdf10bc.live.wavemakeronline.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/WM_live_multipart/invoke/services/file/uploadFile" : {
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "WM_live_multipart_RestServiceVirtualController-invoke",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "files",
+          "in" : "formData",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "file"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "org.springframework.web.multipart.MultipartFile",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/RootResponseROOTEntryItem"
+              },
+              "x-WM-IS_LIST" : true
+            }
+          }
+        },
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/WM_live_multipart/invoke/services/file/uploadFile",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.WM_live_multipart.scheme}://${rest.WM_live_multipart.host}${rest.WM_live_multipart.basepath}/services/file/uploadFile"
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "RootResponseROOT" ],
+      "properties" : {
+        "RootResponseROOT" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/RootResponseROOTEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_multipart.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponseROOTEntryItem" : {
+      "required" : [ "errorMessage", "fileName", "length", "path", "success" ],
+      "properties" : {
+        "errorMessage" : {
+          "type" : "string"
+        },
+        "path" : {
+          "type" : "string"
+        },
+        "fileName" : {
+          "type" : "string"
+        },
+        "length" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_multipart.RootResponseROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

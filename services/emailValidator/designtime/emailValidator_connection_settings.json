@@ -1,0 +1,20 @@
+{
+  "endpointAddress" : "https://pozzad-email-validator.p.mashape.com/emailvalidator/validateEmail/wavemaker.apps@gmail.com",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : {
+    "X-Mashape-Key" : [ "1f5LBkHtXOmshmtmVW6iGv5OaoDJp1Q2FdZjsnVGCKMT83iefC" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"isValid\":true}",
+    "convertedResponse" : null,
+    "statusCode" : 0,
+    "headers" : { }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

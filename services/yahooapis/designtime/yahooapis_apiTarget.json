@@ -1,0 +1,113 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "5ea5cc5c-a3b3-46db-9fff-3fe735ae098f",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "yahooapis",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "query.yahooapis.com",
+  "basePath" : "/v1",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/public/yql" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "yahooapis_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "parameters" : [ {
+          "name" : "q",
+          "in" : "query",
+          "description" : "q",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "env",
+          "in" : "query",
+          "description" : "env",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "diagnostics",
+          "in" : "query",
+          "description" : "diagnostics",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-BASE_PATH" : "/public/yql",
+      "x-WM-COMPLETE_PATH" : "${rest.yahooapis.scheme}://${rest.yahooapis.host}${rest.yahooapis.basepath}/public/yql",
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "results", "xmlns:yahoo", "yahoo:count", "yahoo:created", "yahoo:lang" ],
+      "properties" : {
+        "yahoo:count" : {
+          "type" : "string"
+        },
+        "results" : {
+          "$ref" : "#/definitions/results"
+        },
+        "yahoo:created" : {
+          "type" : "string"
+        },
+        "yahoo:lang" : {
+          "type" : "string"
+        },
+        "xmlns:yahoo" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "results" : {
+      "required" : [ "industry" ],
+      "properties" : {
+        "industry" : {
+          "$ref" : "#/definitions/industry"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "industry" : {
+      "required" : [ "id", "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "yahooapis.industry",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

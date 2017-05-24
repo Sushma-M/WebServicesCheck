@@ -1,0 +1,32 @@
+{
+  "endpointAddress" : "http://e1d52cdf10bc.live.wavemakeronline.com/AllVariableTypes/services/myJava/returnJSONData",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : {
+    "Authorization" : [ "Basic YWRtaW46YWRtaW4=" ]
+  },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"balance\":1000.21,\"num\":100,\"nickname\":\"WM\",\"is_vip\":true,\"name\":\"WaveMaker\"}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "Apache-Coyote/1.1" ],
+      "Cache-Control" : [ "max-age=0" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "X-Frame-Options" : [ "SAMEORIGIN" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Set-Cookie" : [ "JSESSIONID=6A12DDD8C1F2A606B3E8946B44F3BCF7; Path=/AllVariableTypes" ],
+      "ETag" : [ "\"0dee81e61506710f1b408dcb9f2fe471c\"" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Content-Length" : [ "78" ],
+      "Date" : [ "Wed, 24 May 2017 06:13:47 GMT" ],
+      "Connection" : [ "keep-alive" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "BASIC",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}

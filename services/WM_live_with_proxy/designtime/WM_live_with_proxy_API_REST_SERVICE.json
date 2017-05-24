@@ -1,0 +1,84 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "cfc72b79-ba82-405e-a374-4489b65784b4",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "live",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "e1d52cdf10bc.live.wavemakeronline.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/WM_live_with_proxy/invoke/services/classicmodels/procedureExecutor/procedure/execute/getEmployee" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "WM_live_with_proxy_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/WM_live_with_proxy/invoke/services/classicmodels/procedureExecutor/procedure/execute/getEmployee",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.WM_live_with_proxy.scheme}://${rest.WM_live_with_proxy.host}${rest.WM_live_with_proxy.basepath}/services/classicmodels/procedureExecutor/procedure/execute/getEmployee"
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "content" ],
+      "properties" : {
+        "content" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/contentEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_with_proxy.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "contentEntryItem" : {
+      "required" : [ "email", "employeeNumber", "extension", "firstName", "jobTitle", "lastName" ],
+      "properties" : {
+        "extension" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "employeeNumber" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "jobTitle" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_with_proxy.contentEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

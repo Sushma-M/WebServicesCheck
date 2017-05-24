@@ -1,16 +1,16 @@
 <wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="leftnav">
     <wm-nav name="leftnavigation" type="pills" layout="stacked">
         <wm-nav-item name="list_dashboard">
-            <wm-anchor caption="Dashboard" name="dashboardLink" iconclass="wi wi-bar-graph"></wm-anchor>
+            <wm-anchor caption="REST Services" name="dashboardLink" iconclass="wi wi-globe" on-click="Variables.goToPage_Main.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_order">
-            <wm-anchor caption="Pending Orders" name="orderLink" iconclass="wi wi-file"></wm-anchor>
+            <wm-anchor caption="SOAP services" name="orderLink" iconclass="fa fa-server" on-click="Variables.goToPage_SOAP.invoke()"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_inventory">
-            <wm-anchor caption="Inventory" name="inventoryLink" iconclass="wi wi-tag"></wm-anchor>
+            <wm-anchor caption="Feed" name="inventoryLink" iconclass="wi wi-rss-feed"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_support">
-            <wm-anchor caption="Support Calls" name="supportLink" iconclass="wi wi-envelope"></wm-anchor>
+            <wm-anchor caption="WebSocket" name="supportLink" iconclass="fa fa-soccer-ball-o"></wm-anchor>
         </wm-nav-item>
     </wm-nav>
 </wm-partial>

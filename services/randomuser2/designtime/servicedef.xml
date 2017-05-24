@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="randomuser2" type="RestService" springFile="randomuser2.spring.xml">
+    <dataobjects/>
+</service>

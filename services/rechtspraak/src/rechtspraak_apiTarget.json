@@ -1,0 +1,196 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.rechtspraak.basepath}",
+  "paths" : {
+    "/zoeken" : {
+      "x-WM-BASE_PATH" : "/zoeken",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/atom+xml" ],
+        "parameters" : [ {
+          "items" : {
+            "type" : "array"
+          },
+          "description" : "date",
+          "name" : "date",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "description" : "type",
+          "name" : "type",
+          "x-WM-EDITABLE" : false,
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        }, {
+          "name" : "date",
+          "format" : "string",
+          "type" : "string",
+          "required" : false,
+          "in" : "query"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "rechtspraak_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.rechtspraak.scheme}://${rest.rechtspraak.host}${rest.rechtspraak.basepath}/zoeken"
+    }
+  },
+  "host" : "${rest.rechtspraak.host}",
+  "schemes" : [ "${rest.rechtspraak.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "summary" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.summary",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "content", "type" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "title" : {
+          "$ref" : "#/definitions/title"
+        },
+        "updated" : {
+          "type" : "string"
+        },
+        "entry" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/entryEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "rights" : {
+          "$ref" : "#/definitions/rights"
+        },
+        "subtitle" : {
+          "$ref" : "#/definitions/subtitle"
+        },
+        "xmlns" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "entry", "id", "rights", "subtitle", "title", "updated", "xmlns" ]
+    },
+    "title" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.title",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "content", "type" ]
+    },
+    "link" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.link",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "rel" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "href", "rel", "type" ]
+    },
+    "rights" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.rights",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "content", "type" ]
+    },
+    "subtitle" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.subtitle",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "content" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "content", "type" ]
+    },
+    "entryEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "rechtspraak.entryEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "summary" : {
+          "$ref" : "#/definitions/summary"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "title" : {
+          "$ref" : "#/definitions/title"
+        },
+        "updated" : {
+          "type" : "string"
+        },
+        "link" : {
+          "$ref" : "#/definitions/link"
+        },
+        "deleted" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "deleted", "id", "link", "summary", "title", "updated" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "dadfb8db-d464-4d50-b0d2-a2c81ff1b7b0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "rechtspraak",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

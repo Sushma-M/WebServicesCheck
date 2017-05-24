@@ -1,0 +1,106 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.WM_live_multipart.basepath}",
+  "paths" : {
+    "/services/file/uploadFile" : {
+      "x-WM-BASE_PATH" : "/services/file/uploadFile",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "parameters" : [ {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "org.springframework.web.multipart.MultipartFile",
+          "items" : {
+            "type" : "file"
+          },
+          "name" : "files",
+          "x-WM-EDITABLE" : true,
+          "type" : "array",
+          "required" : false,
+          "in" : "formData"
+        } ],
+        "consumes" : [ "multipart/form-data" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "x-WM-IS_LIST" : true,
+              "items" : {
+                "$ref" : "#/definitions/RootResponseROOTEntryItem"
+              },
+              "uniqueItems" : false,
+              "type" : "array"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "WM_live_multipart_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.WM_live_multipart.scheme}://${rest.WM_live_multipart.host}${rest.WM_live_multipart.basepath}/services/file/uploadFile"
+    }
+  },
+  "host" : "${rest.WM_live_multipart.host}",
+  "schemes" : [ "${rest.WM_live_multipart.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_multipart.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "RootResponseROOT" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/RootResponseROOTEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      },
+      "required" : [ "RootResponseROOT" ]
+    },
+    "RootResponseROOTEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "WM_live_multipart.RootResponseROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "errorMessage" : {
+          "type" : "string"
+        },
+        "length" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "fileName" : {
+          "type" : "string"
+        },
+        "path" : {
+          "type" : "string"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      },
+      "required" : [ "errorMessage", "fileName", "length", "path", "success" ]
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "3eb0ce55-495e-47ef-8ce9-93ba1cf426c8",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "live",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}

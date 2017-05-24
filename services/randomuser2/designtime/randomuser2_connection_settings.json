@@ -1,0 +1,31 @@
+{
+  "endpointAddress" : "https://api.randomuser.me/",
+  "method" : "GET",
+  "requestBody" : "",
+  "headers" : { },
+  "queryParams" : { },
+  "sampleHttpResponseDetails" : {
+    "responseBody" : "{\"results\":[{\"gender\":\"female\",\"name\":{\"title\":\"mrs\",\"first\":\"alina\",\"last\":\"köhler\"},\"location\":{\"street\":\"1406 schulweg\",\"city\":\"gera\",\"state\":\"bremen\",\"postcode\":62560},\"email\":\"alina.köhler@example.com\",\"login\":{\"username\":\"silverswan181\",\"password\":\"flexible\",\"salt\":\"hxyYHvqB\",\"md5\":\"b3aff2fff866653c2ca36a45ae4b2bd2\",\"sha1\":\"546d38c7646d12132b68f0edc0ca656828cdf0f0\",\"sha256\":\"9b8c4730d1d92f1bd024a3d92e0d799d03c1c4f372cc71c4dc55dc69bdd0141d\"},\"dob\":\"1966-04-09 21:38:31\",\"registered\":\"2016-06-24 06:17:22\",\"phone\":\"0455-9532094\",\"cell\":\"0171-9355297\",\"id\":{\"name\":\"\",\"value\":null},\"picture\":{\"large\":\"https://randomuser.me/api/portraits/women/89.jpg\",\"medium\":\"https://randomuser.me/api/portraits/med/women/89.jpg\",\"thumbnail\":\"https://randomuser.me/api/portraits/thumb/women/89.jpg\"},\"nat\":\"DE\"}],\"info\":{\"seed\":\"197a2c34d3336c10\",\"results\":1,\"page\":1,\"version\":\"1.1\"}}",
+    "convertedResponse" : null,
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Tue, 23 May 2017 06:51:09 GMT" ],
+      "Content-Type" : [ "application/json; charset=utf-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "Set-Cookie" : [ "__cfduid=d5545f4497ec052638c9388696fdd997f1495522269; expires=Wed, 23-May-18 06:51:09 GMT; path=/; domain=.randomuser.me; HttpOnly" ],
+      "X-Powered-By" : [ "Express" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Cache-Control" : [ "no-cache" ],
+      "ETag" : [ "W/\"370-lXckfhXnaTyCXIrV1bEeKQ\"" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Server" : [ "cloudflare-nginx" ],
+      "CF-RAY" : [ "363615c91c382432-IAD" ]
+    }
+  },
+  "redirectEnabled" : true,
+  "proxy" : null,
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null
+}
