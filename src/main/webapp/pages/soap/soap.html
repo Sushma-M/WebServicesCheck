@@ -1,0 +1,52 @@
+<wm-page data-ng-controller="soapPageController" pagetitle="Soap" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="8" name="page_content1">
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1" title="CI Full Country Info All">
+                    <wm-grid title="" dataset="bind:Variables.CountryInfoServiceFullCountryInfoAllCountries.dataSet.fullCountryInfoAllCountriesResult.tCountryInfo" navigation="Basic" name="grid1">
+                        <wm-grid-column binding="sName" caption="S Name" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="sCapitalCity" caption="S Capital City" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="sContinentCode" caption="S Continent Code" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="sPhoneCode" caption="S Phone Code" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="sCurrencyISOCode" caption="S Currency Iso Code" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="sCountryFlag" caption="S Country Flag" type="string" widget-type="image" edit-widget-type="text" show="true" readonly="false">
+                            <wm-picture picturesource="{{row.getProperty('sCountryFlag')}}" hint="{{row.getProperty('sCountryFlag')}}" class="" data-ng-class=""></wm-picture>
+                        </wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane2" title="CI Capital City">
+                    <wm-composite name="composite1">
+                        <wm-label class="col-md-3 control-label" name="label2" caption="Country Name"></wm-label>
+                        <wm-container class="col-md-9" name="container1">
+                            <wm-text name="text1" type="text"></wm-text>
+                        </wm-container>
+                    </wm-composite>
+                    <wm-grid title="" dataset="bind:Variables.CountryInfoServiceCapitalCity.dataSet" navigation="None" name="grid2">
+                        <wm-grid-column binding="capitalCityResult" caption="Capital City Result" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    </wm-grid>
+                    <wm-button class="btn-default" caption="Get Result" type="button" margin="unset 0.5em" name="button2" on-click="Variables.CountryInfoServiceCapitalCity.invoke()"></wm-button>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane3" title="Calc">
+                    <wm-composite name="composite2">
+                        <wm-label class="col-md-3 control-label" name="label3"></wm-label>
+                        <wm-container class="col-md-9" name="container2">
+                            <wm-text name="text2"></wm-text>
+                        </wm-container>
+                    </wm-composite>
+                    <wm-composite name="composite3">
+                        <wm-label class="col-md-3 control-label" name="label4"></wm-label>
+                        <wm-container class="col-md-9" name="container3">
+                            <wm-text name="text3"></wm-text>
+                        </wm-container>
+                    </wm-composite>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.staticVariable1.dataSet"></wm-label>
+        </wm-page-content>
+        <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

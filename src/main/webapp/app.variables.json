@@ -45,14 +45,14 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
-  "goToPage_SOAP" : {
-    "_id" : "wm-goToPage_SOAP-wm.NavigationVariable-1495525340325",
-    "name" : "goToPage_SOAP",
+  "goToPage_soap" : {
+    "_id" : "wm-goToPage_soap-wm.NavigationVariable-1495693401306",
+    "name" : "goToPage_soap",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
-    "pageName" : "SOAP",
+    "pageName" : "soap",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },

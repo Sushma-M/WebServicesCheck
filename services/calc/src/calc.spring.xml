@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.webservicescheck.services.calc.controller,com.webservicescheck.services.calc.services "/>
+     <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+            <property name="locations">
+                <list>
+                    <value>
+                        classpath:calc.properties
+                    </value>
+                </list>
+            </property>
+            <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        </bean>
+
+    <bean id="calcSoapServiceSettings" class="com.wavemaker.runtime.soap.SoapServiceSettings">
+            <property name="endpointAddress" value="${calc.endpoint}"/>
+            <property name="httpBasicAuthUsername" value="${calc.username}"/>
+            <property name="httpBasicAuthPassword" value="${calc.password}"/>
+            <property name="connectionTimeout" value="${calc.connectionTimeout}"/>
+            <property name="requestTimeout" value="${calc.requestTimeout}"/>
+            <property name="httpHeaders">
+             <map>
+            </map>
+           </property>
+
+     </bean>
+</beans>

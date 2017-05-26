@@ -127,20 +127,20 @@
                             <wm-text name="account_number2" datavalue="1234567890123456"></wm-text>
                         </wm-container>
                     </wm-composite>
-                    <wm-button class="btn-default" caption="update account!" type="button" margin="unset 0.5em" name="button3" on-dblclick="Variables.Reimaginebanking_putInvoke.invoke()"></wm-button>
+                    <wm-button class="btn-default" caption="update account!" type="button" margin="unset 0.5em" name="button3" on-dblclick="Variables.Reimaginebanking_putInvoke.invoke()" on-click="Variables.Reimaginebanking_putInvoke.invoke()"></wm-button>
                 </wm-accordionpane>
                 <wm-accordionpane name="accordionpane7" title="DELETE type REST service" iconclass="wi wi-delete-forever">
                     <wm-composite name="composite15_1">
                         <wm-label class="col-md-3 control-label" name="label24" caption="account_number"></wm-label>
                         <wm-container class="col-md-9" name="container16">
-                            <wm-text name="account_number3" datavalue="bind:Variables.Reimaginebanking_postInvoke.dataSet.objectCreated._id"></wm-text>
+                            <wm-text name="account_number3" datavalue="bind:Variables.Reimaginebanking_getInvoke.firstRecord._id"></wm-text>
                         </wm-container>
                     </wm-composite>
                     <wm-grid title="" dataset="bind:Variables.reimaginebanking_delete.dataSet" navigation="None" name="grid7"></wm-grid>
                     <wm-label padding="unset 0.5em" name="label25" caption="bind:Variables.reimaginebanking_delete.dataSet"></wm-label>
                     <wm-button class="btn-default" caption="Delete Account!" type="button" margin="unset 0.5em" name="button4" on-click="Variables.reimaginebanking_delete.invoke()"></wm-button>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane8" title="REST with xml" iconclass="fa fa-subscript">
+                <wm-accordionpane name="accordionpane8" title="REST with xml" iconclass="fa fa-subscript" on-expand="Variables.RandomuserInvoke.invoke()">
                     <wm-livelist listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" dataset="bind:Variables.RandomuserInvoke.dataSet.results" navigation="None" name="livelist2_1" enablereorder="false">
                         <wm-listtemplate layout="media" name="listtemplate2_1">
                             <wm-card name="card1">
@@ -180,7 +180,7 @@
                     </wm-composite>
                     <wm-button class="btn-default" caption="valid or not" type="button" margin="unset 0.5em" name="button3_1" on-click="Variables.emailValidatorInvoke.invoke()"></wm-button>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane10" title="REST to verify Custom Data &amp; Key Mapping" iconclass="wi wi-data-usage">
+                <wm-accordionpane name="accordionpane10" title="REST to verify Custom Data &amp; Key Mapping" iconclass="wi wi-data-usage" on-expand="Variables.QuandlInvoke.invoke()">
                     <wm-grid title="" dataset="bind:Variables.QuandlInvoke.dataSet.wmTransformedData" navigation="Basic" name="grid8">
                         <wm-grid-column binding="Date" caption="Date" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
                         <wm-grid-column binding="Software" caption="Software" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
@@ -194,7 +194,7 @@
                         <wm-grid-column binding="Industrial_Energy" caption="Industrial Energy" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
                     </wm-grid>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane11" title="REST without query, header, auth parameters" iconclass="wi wi-clear-all">
+                <wm-accordionpane name="accordionpane11" title="REST without query, header, auth parameters" iconclass="wi wi-clear-all" on-expand="Variables.Randomuser2Invoke.invoke()">
                     <wm-grid title="" dataset="bind:Variables.Randomuser2Invoke.dataSet.results" navigation="None" name="grid8_1">
                         <wm-grid-column binding="picture.medium" widget-type="image" caption="Picture Medium" pcdisplay="true" mobiledisplay="true">
                             <wm-picture picturesource="{{row.getProperty('picture.medium')}}" hint="{{row.getProperty('picture.medium')}}" class="" data-ng-class=""></wm-picture>
@@ -206,10 +206,10 @@
                         <wm-grid-column binding="location.city" caption="Location City" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
                     </wm-grid>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane12" title="REST which is useful to display charts" iconclass="wi wi-pie-chart">
+                <wm-accordionpane name="accordionpane12" title="REST which is useful to display charts" iconclass="wi wi-pie-chart" on-expand="Variables.Fda_chartInvoke.invoke()">
                     <wm-chart type="Pie" title="Pie Chart" height="500px" iconclass="wi wi-pie-chart" name="chart1" dataset="bind:Variables.Fda_chartInvoke.dataSet.results" xaxisdatakey="term" yaxisdatakey="count" showlegend="hide" width="auto"></wm-chart>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane13" title="REST Yahoo Web service" iconclass="fa fa-yahoo">
+                <wm-accordionpane name="accordionpane13" title="REST Yahoo Web service" iconclass="fa fa-yahoo" on-expand="Variables.YahooapisInvoke.invoke()">
                     <wm-grid title="" dataset="bind:Variables.YahooapisInvoke.dataSet" navigation="Basic" name="grid9">
                         <wm-grid-column binding="yahoo:count" caption="Yahoo Count" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
                         <wm-grid-column binding="yahoo:created" caption="Yahoo Created" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
@@ -219,7 +219,7 @@
                         <wm-grid-column binding="xmlns:yahoo" caption="Xmlns Yahoo" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
                     </wm-grid>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane14" title="REST service without proxy" iconclass="fa fa-product-hunt">
+                <wm-accordionpane name="accordionpane14" title="REST service without proxy" iconclass="fa fa-product-hunt" on-expand="Variables.Yahooapis_noproxyInvoke.invoke()">
                     <wm-grid title="" dataset="bind:Variables.Yahooapis_noproxyInvoke.dataSet" navigation="Basic" name="grid10">
                         <wm-grid-column binding="yahoo:count" caption="Yahoo Count" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
                         <wm-grid-column binding="yahoo:created" caption="Yahoo Created" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
@@ -242,7 +242,7 @@
                 <wm-accordionpane name="accordionpane17" title="REST File Download with header" iconclass="fa fa-download">
                     <wm-button class="btn-default" caption="Web2Pdf" type="button" margin="unset 0.5em" name="button7" on-click="Variables.web2pdfInvoke.invoke()"></wm-button>
                 </wm-accordionpane>
-                <wm-accordionpane name="accordionpane18" title="REST with two query parameters with same name" iconclass="wi wi-equalizer">
+                <wm-accordionpane name="accordionpane18" title="REST with two query parameters with same name" iconclass="wi wi-equalizer" on-expand="Variables.RechtspraakInvoke.invoke()">
                     <wm-grid title="" dataset="bind:Variables.RechtspraakInvoke.dataSet.entry[$i].link" navigation="Basic" name="grid12" iconclass="">
                         <wm-grid-column binding="rel" caption="Rel" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
                         <wm-grid-column binding="type" caption="Type" type="string" backgroundcolor="" textcolor="" col-class="" col-ng-class="" accessroles="" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>

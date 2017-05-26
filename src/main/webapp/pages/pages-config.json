@@ -11,10 +11,6 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
-  "name" : "SOAP",
-  "type" : "PAGE",
-  "params" : [ ]
-}, {
   "name" : "footer",
   "type" : "FOOTER",
   "params" : [ ]
@@ -29,6 +25,10 @@
 }, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "soap",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "topnav",

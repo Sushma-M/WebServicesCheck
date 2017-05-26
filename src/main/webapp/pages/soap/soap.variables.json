@@ -1,0 +1,73 @@
+{
+  "CountryInfoServiceCapitalCity" : {
+    "_id" : "wm-CountryInfoServiceCapitalCity-wm.ServiceVariable-1495695141356",
+    "name" : "CountryInfoServiceCapitalCity",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "SCountryISOCode",
+      "value" : "bind:Widgets.text1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.webservicescheck.services.countryinfoservice.CapitalCityResponse",
+    "service" : "CountryInfoService",
+    "operation" : "capitalCity",
+    "operationId" : "CountryInfoServiceController_capitalCity",
+    "operationType" : "get",
+    "serviceType" : "SoapService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "CountryInfoService"
+  },
+  "CountryInfoServiceFullCountryInfoAllCountries" : {
+    "_id" : "wm-CountryInfoServiceFullCountryInfoAllCountries-wm.ServiceVariable-1495694013857",
+    "name" : "CountryInfoServiceFullCountryInfoAllCountries",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.webservicescheck.services.countryinfoservice.FullCountryInfoAllCountriesResponse",
+    "service" : "CountryInfoService",
+    "operation" : "fullCountryInfoAllCountries",
+    "operationId" : "CountryInfoServiceController_fullCountryInfoAllCountries",
+    "operationType" : "get",
+    "serviceType" : "SoapService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "CountryInfoService"
+  },
+  "staticVariable1" : {
+    "_id" : "wm-staticVariable1-wm.Variable-1495694193512",
+    "name" : "staticVariable1",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Variables.CountryInfoServiceFullCountryInfoAllCountries.dataSet.fullCountryInfoAllCountriesResult.tCountryInfo[$i].languages",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : [ {
+        "dataValue" : "12"
+      }, {
+        "dataValue" : "2112"
+      } ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}
