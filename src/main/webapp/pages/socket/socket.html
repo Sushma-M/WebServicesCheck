@@ -16,16 +16,17 @@
                     <wm-button class="btn-default" caption="Get Response" type="button" margin="unset 0.5em" on-click="Variables.websocket_sample.send()" name="button1"></wm-button>
                 </wm-accordionpane>
                 <wm-accordionpane name="accordionpane2" title="Heartrate" on-expand="Variables.Wavemakeronline_random.open()" on-collapse="Variables.Wavemakeronline_random.close()">
+                    <wm-label padding="unset 0.5em" name="label3" caption="bind:Variables.Wavemakeronline.dataSet"></wm-label>
                     <wm-grid title="" dataset="bind:Variables.Wavemakeronline_random.dataSet" navigation="Basic" name="grid1">
-                        <wm-grid-column binding="time" caption="Time" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="value" caption="Value" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                        <wm-grid-column binding="time" caption="Time" type="string" formatpattern="timeFromNow" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="value" caption="Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                     </wm-grid>
                 </wm-accordionpane>
                 <wm-accordionpane name="accordionpane3" title="Random Number">
                     <wm-chart type="Area" title="Area Chart" height="250px" iconclass="fa fa-area-chart" name="chart1" dataset="bind:Variables.Wavemakeronline.dataSet" xaxisdatakey="time" yaxisdatakey="value" showlegend="hide"></wm-chart>
                     <wm-grid title="" dataset="bind:Variables.Wavemakeronline.dataSet" navigation="Basic" name="grid2">
-                        <wm-grid-column binding="time" caption="Time" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="value" caption="Value" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                        <wm-grid-column binding="time" caption="Time" type="string" formatpattern="timeFromNow" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                        <wm-grid-column binding="value" caption="Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                     </wm-grid>
                 </wm-accordionpane>
                 <wm-accordionpane name="accordionpane4" title="Ripple">
