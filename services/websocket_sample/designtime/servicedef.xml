@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="websocket_sample" type="WebSocketService" springFile="websocket_sample.spring.xml">
+    <dataobjects/>
+</service>

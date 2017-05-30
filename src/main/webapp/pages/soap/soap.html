@@ -5,7 +5,7 @@
         <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
         <wm-page-content columnwidth="8" name="page_content1">
             <wm-accordion name="accordion1">
-                <wm-accordionpane name="accordionpane1" title="CI Full Country Info All">
+                <wm-accordionpane name="accordionpane1" title="CI Full Country Info All" on-expand="Variables.CountryInfoServiceFullCountryInfoAllCountries.invoke()">
                     <wm-grid title="" dataset="bind:Variables.CountryInfoServiceFullCountryInfoAllCountries.dataSet.fullCountryInfoAllCountriesResult.tCountryInfo" navigation="Basic" name="grid1">
                         <wm-grid-column binding="sName" caption="S Name" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                         <wm-grid-column binding="sCapitalCity" caption="S Capital City" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
@@ -42,9 +42,45 @@
                             <wm-text name="text3"></wm-text>
                         </wm-container>
                     </wm-composite>
+                    <wm-grid title="" dataset="bind:Variables.CalcAdd.dataSet" navigation="Basic" name="grid3">
+                        <wm-grid-column binding="addResult" caption="Add Result" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    </wm-grid>
+                    <wm-button class="btn-default" caption="Add" type="button" margin="unset 0.5em" name="button2_1" on-click="Variables.CalcAdd.invoke()"></wm-button>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane4" title="CI File Continents" on-expand="Variables.CountryInfoService1ListOfContinentsByName.invoke()">
+                    <wm-grid title="" dataset="bind:Variables.CountryInfoService1ListOfContinentsByName.dataSet.listOfContinentsByNameResult.tContinent" navigation="Basic" name="grid4">
+                        <wm-grid-column binding="sCode" caption="S Code" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                        <wm-grid-column binding="sName" caption="S Name" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    </wm-grid>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane5" title="Feed" on-expand="Variables.FeedServiceGetFeed.invoke()">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.FeedServiceGetFeed.dataSet.entries" navigation="Basic" name="livelist1">
+                        <wm-listtemplate layout="inline" name="listtemplate1">
+                            <wm-container class="media-body" padding="unset unset unset 1.25em" name="container5">
+                                <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.FeedServiceGetFeed.dataSet.entries.title" fontunit="em"></wm-label>
+                                <wm-label name="Time" caption="bind:Variables.FeedServiceGetFeed.dataSet.entries.publishedDate" class="pull-right" margin="0px unset unset unset"></wm-label>
+                                <wm-label caption="bind:Variables.FeedServiceGetFeed.dataSet.entries.link" class="h5" margin="0px unset unset unset" name="JobTitle"></wm-label>
+                                <wm-label name="Content" caption="bind:Variables.FeedServiceGetFeed.dataSet.entries.description" class="p text-muted"></wm-label>
+                            </wm-container>
+                            <wm-container class="media-right" name="container6"></wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane6" title="Feed with Auth" on-expand="Variables.FeedServiceGetFeedWithHttpConfig.invoke()">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.FeedServiceGetFeedWithHttpConfig.dataSet.entries" navigation="Basic" name="livelist2">
+                        <wm-listtemplate layout="inline" name="listtemplate2">
+                            <wm-container class="media-body" padding="unset unset unset 1.25em" name="container7">
+                                <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.FeedServiceGetFeedWithHttpConfig.dataSet.entries.title" fontunit="em"></wm-label>
+                                <wm-label name="Time" caption="bind:Variables.FeedServiceGetFeedWithHttpConfig.dataSet.entries.publishedDate" class="pull-right" margin="0px unset unset unset"></wm-label>
+                                <wm-label caption="bind:Variables.FeedServiceGetFeedWithHttpConfig.dataSet.entries.link" class="h5" margin="0px unset unset unset" name="JobTitle"></wm-label>
+                                <wm-label name="Content" caption="bind:Variables.FeedServiceGetFeedWithHttpConfig.dataSet.entries.description" class="p text-muted"></wm-label>
+                            </wm-container>
+                            <wm-container class="media-right" name="container8"></wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
                 </wm-accordionpane>
             </wm-accordion>
-            <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.staticVariable1.dataSet"></wm-label>
+            <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.staticVariable1.dataSet" show="false"></wm-label>
         </wm-page-content>
         <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel>
     </wm-content>

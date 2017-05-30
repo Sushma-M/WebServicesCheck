@@ -1,0 +1,76 @@
+{
+  "Ripple" : {
+    "_id" : "wm-Ripple-wm.WebSocketVariable-1496127941061",
+    "name" : "Ripple",
+    "owner" : "Page",
+    "category" : "wm.WebSocketVariable",
+    "dataBinding" : [ {
+      "target" : "RequestBody.id",
+      "value" : "bind:1"
+    }, {
+      "target" : "RequestBody.command",
+      "value" : "bind:\"server_state\""
+    } ],
+    "service" : "ripple",
+    "operationId" : "ripple_WebSocketServiceVirtualController-invoke",
+    "dataSet" : [ ],
+    "type" : "ripple.RootResponse",
+    "isDefault" : false,
+    "isList" : false,
+    "startUpdate" : false,
+    "dataUpdateStrategy" : "refresh",
+    "dataLimit" : 20
+  },
+  "Wavemakeronline" : {
+    "_id" : "wm-Wavemakeronline-wm.WebSocketVariable-1496127776860",
+    "name" : "Wavemakeronline",
+    "owner" : "Page",
+    "category" : "wm.WebSocketVariable",
+    "dataBinding" : [ ],
+    "service" : "wavemakeronline",
+    "operationId" : "wavemakeronline_WebSocketServiceVirtualController-invoke",
+    "dataSet" : [ ],
+    "type" : "wavemakeronline.RootResponse",
+    "isDefault" : false,
+    "isList" : false,
+    "startUpdate" : true,
+    "dataUpdateStrategy" : "prepend",
+    "dataLimit" : 20
+  },
+  "Wavemakeronline_random" : {
+    "_id" : "wm-Wavemakeronline_random-wm.WebSocketVariable-1496127060178",
+    "name" : "Wavemakeronline_random",
+    "owner" : "Page",
+    "category" : "wm.WebSocketVariable",
+    "dataBinding" : [ ],
+    "service" : "wavemakeronline_random",
+    "operationId" : "wavemakeronline_random_WebSocketServiceVirtualController-invoke",
+    "dataSet" : [ ],
+    "type" : "wavemakeronline_random.RootResponse",
+    "isDefault" : false,
+    "isList" : false,
+    "startUpdate" : false,
+    "dataUpdateStrategy" : "append",
+    "dataLimit" : 20
+  },
+  "websocket_sample" : {
+    "_id" : "wm-websocket_sample-wm.WebSocketVariable-1496126886980",
+    "name" : "websocket_sample",
+    "owner" : "Page",
+    "category" : "wm.WebSocketVariable",
+    "dataBinding" : [ {
+      "target" : "RequestBody",
+      "value" : "bind:Widgets.text1.datavalue",
+      "type" : "websocket_sample.RootRequest"
+    } ],
+    "service" : "websocket_sample",
+    "operationId" : "websocket_sample_WebSocketServiceVirtualController-invoke",
+    "dataSet" : [ ],
+    "type" : "websocket_sample.RootResponse",
+    "isDefault" : false,
+    "isList" : false,
+    "startUpdate" : false,
+    "dataUpdateStrategy" : "refresh",
+    "dataLimit" : 20
+  }
+}

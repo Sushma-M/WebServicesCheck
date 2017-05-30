@@ -1,0 +1,15 @@
+{
+  "endpointAddress" : "wss://s2.ripple.com/",
+  "method" : "GET",
+  "contentType" : "",
+  "sampleRequestBody" : "{\n  \"id\": 1,\n  \"command\": \"server_state\"\n}",
+  "authType" : "NONE",
+  "headers" : { },
+  "queryParams" : { },
+  "sampleWebSocketResponse" : {
+    "responseBody" : "{\"id\":1,\"result\":{\"state\":{\"build_version\":\"0.60.3\",\"complete_ledgers\":\"32570-30130629\",\"io_latency_ms\":1,\"last_close\":{\"converge_time\":3000,\"proposers\":5},\"load_base\":256,\"load_factor\":256,\"load_factor_fee_escalation\":256,\"load_factor_fee_queue\":256,\"load_factor_fee_reference\":256,\"load_factor_server\":256,\"peers\":97,\"pubkey_node\":\"n9MTAzwUqpzqXQnzmnJMgbRGHLkDcP4MSUb982o8XXQKfWYTHxsD\",\"server_state\":\"full\",\"state_accounting\":{\"connected\":{\"duration_us\":\"92055983\",\"transitions\":1},\"disconnected\":{\"duration_us\":\"1294629\",\"transitions\":1},\"full\":{\"duration_us\":\"1575978742127\",\"transitions\":13},\"syncing\":{\"duration_us\":\"84373376\",\"transitions\":13},\"tracking\":{\"duration_us\":\"178767\",\"transitions\":13}},\"uptime\":1576157,\"validated_ledger\":{\"base_fee\":10,\"close_time\":549443110,\"hash\":\"70255EA758DC61BC0AA350E13DBE533528B2997C80D4BAF1B42E69E98C603EAA\",\"reserve_base\":20000000,\"reserve_inc\":5000000,\"seq\":30130629},\"validation_quorum\":3}},\"status\":\"success\",\"type\":\"response\"}",
+    "convertedResponse" : null,
+    "statusCode" : 0,
+    "contentType" : ""
+  }
+}

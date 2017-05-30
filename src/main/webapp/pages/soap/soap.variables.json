@@ -1,4 +1,56 @@
 {
+  "CalcAdd" : {
+    "_id" : "wm-CalcAdd-wm.ServiceVariable-1496124818533",
+    "name" : "CalcAdd",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "Add.intA",
+      "value" : "bind:Widgets.text2.datavalue"
+    }, {
+      "target" : "Add.intB",
+      "value" : "bind:Widgets.text3.datavalue"
+    } ],
+    "type" : "com.webservicescheck.services.calc.AddResponse",
+    "service" : "calc",
+    "operation" : "add",
+    "operationId" : "CalcController_add",
+    "operationType" : "post",
+    "serviceType" : "SoapService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "Calc"
+  },
+  "CountryInfoService1ListOfContinentsByName" : {
+    "_id" : "wm-CountryInfoService1ListOfContinentsByName-wm.ServiceVariable-1496125751448",
+    "name" : "CountryInfoService1ListOfContinentsByName",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.webservicescheck.services.countryinfoservice1.ListOfContinentsByNameResponse",
+    "service" : "CountryInfoService1",
+    "operation" : "listOfContinentsByName",
+    "operationId" : "CountryInfoService1Controller_listOfContinentsByName",
+    "operationType" : "get",
+    "serviceType" : "SoapService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "CountryInfoService1"
+  },
   "CountryInfoServiceCapitalCity" : {
     "_id" : "wm-CountryInfoServiceCapitalCity-wm.ServiceVariable-1495695141356",
     "name" : "CountryInfoServiceCapitalCity",
@@ -41,13 +93,79 @@
     "dataSet" : [ ],
     "isList" : false,
     "maxResults" : 20,
-    "startUpdate" : true,
+    "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
     "transformationRequired" : false,
     "saveInPhonegap" : false,
     "isDefault" : true,
     "controller" : "CountryInfoService"
+  },
+  "FeedServiceGetFeed" : {
+    "_id" : "wm-FeedServiceGetFeed-wm.ServiceVariable-1496125977476",
+    "name" : "FeedServiceGetFeed",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "feedURL",
+      "value" : "http://news.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.runtime.feed.model.Feed",
+    "service" : "FeedService",
+    "operation" : "getFeed",
+    "operationId" : "FeedServiceController_getFeed",
+    "operationType" : "get",
+    "serviceType" : "FeedService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "FeedService"
+  },
+  "FeedServiceGetFeedWithHttpConfig" : {
+    "_id" : "wm-FeedServiceGetFeedWithHttpConfig-wm.ServiceVariable-1496126110128",
+    "name" : "FeedServiceGetFeedWithHttpConfig",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "feedURL",
+      "value" : "https://mail.google.com/mail/feed/atom",
+      "type" : "string"
+    }, {
+      "target" : "httpBasicAuthUsername",
+      "value" : "wavemaker.apps@gmail.com",
+      "type" : "string"
+    }, {
+      "target" : "httpBasicAuthPassword",
+      "value" : "pramati123",
+      "type" : "string"
+    }, {
+      "target" : "connectionTimeout",
+      "value" : "3000",
+      "type" : "integer"
+    } ],
+    "type" : "com.wavemaker.runtime.feed.model.Feed",
+    "service" : "FeedService",
+    "operation" : "getFeedWithHttpConfig",
+    "operationId" : "FeedServiceController_getFeedWithHttpConfig",
+    "operationType" : "get",
+    "serviceType" : "FeedService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "FeedService"
   },
   "staticVariable1" : {
     "_id" : "wm-staticVariable1-wm.Variable-1495694193512",

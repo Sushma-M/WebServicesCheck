@@ -1,0 +1,276 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "WebSocketService",
+    "x-WM-API_ID" : "cef3a0b2-180e-47ac-a57d-8378f89c077c",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-SERVICE_ID" : "ripple",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "s2.ripple.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "WebSocketServiceVirtualController",
+    "description" : "WebSocket service swagger documentation"
+  } ],
+  "schemes" : [ "wss" ],
+  "paths" : {
+    "/ripple/invoke/" : {
+      "get" : {
+        "tags" : [ "WebSocketServiceVirtualController" ],
+        "operationId" : "ripple_WebSocketServiceVirtualController-invoke",
+        "security" : [ {
+          "WM_WebSocket_Service_Authorization" : [ ]
+        } ],
+        "x-WM-OUT-PARAMS-TYPE" : [ "#/definitions/RootResponse" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-IN-PARAMS-TYPE" : [ "#/definitions/RootRequest" ]
+      },
+      "x-WM-BASE_PATH" : "/ripple/invoke/",
+      "x-WM-TAG" : "WebSocketServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${websocket.ripple.scheme}://${websocket.ripple.host}${websocket.ripple.basepath}/"
+    }
+  },
+  "definitions" : {
+    "disconnected" : {
+      "properties" : {
+        "duration_us" : {
+          "type" : "string"
+        },
+        "transitions" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.disconnected",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "RootRequest" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "command" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.RootRequest",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "result" : {
+      "properties" : {
+        "state" : {
+          "$ref" : "#/definitions/state"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.result",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "result" : {
+          "$ref" : "#/definitions/result"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.RootResponse",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "syncing" : {
+      "properties" : {
+        "duration_us" : {
+          "type" : "string"
+        },
+        "transitions" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.syncing",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "state_accounting" : {
+      "properties" : {
+        "disconnected" : {
+          "$ref" : "#/definitions/disconnected"
+        },
+        "syncing" : {
+          "$ref" : "#/definitions/syncing"
+        },
+        "tracking" : {
+          "$ref" : "#/definitions/tracking"
+        },
+        "full" : {
+          "$ref" : "#/definitions/full"
+        },
+        "connected" : {
+          "$ref" : "#/definitions/connected"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.state_accounting",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "tracking" : {
+      "properties" : {
+        "duration_us" : {
+          "type" : "string"
+        },
+        "transitions" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.tracking",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "full" : {
+      "properties" : {
+        "duration_us" : {
+          "type" : "string"
+        },
+        "transitions" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.full",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "connected" : {
+      "properties" : {
+        "duration_us" : {
+          "type" : "string"
+        },
+        "transitions" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.connected",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "validated_ledger" : {
+      "properties" : {
+        "close_time" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "hash" : {
+          "type" : "string"
+        },
+        "seq" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "base_fee" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "reserve_base" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "reserve_inc" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.validated_ledger",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "state" : {
+      "properties" : {
+        "load_base" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "load_factor_fee_reference" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "state_accounting" : {
+          "$ref" : "#/definitions/state_accounting"
+        },
+        "server_state" : {
+          "type" : "string"
+        },
+        "validation_quorum" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "io_latency_ms" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "validated_ledger" : {
+          "$ref" : "#/definitions/validated_ledger"
+        },
+        "uptime" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "pubkey_node" : {
+          "type" : "string"
+        },
+        "load_factor_fee_escalation" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "load_factor_fee_queue" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "last_close" : {
+          "$ref" : "#/definitions/last_close"
+        },
+        "load_factor_server" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "build_version" : {
+          "type" : "string"
+        },
+        "load_factor" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "peers" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "complete_ledgers" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.state",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    },
+    "last_close" : {
+      "properties" : {
+        "proposers" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "converge_time" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "ripple.last_close",
+      "x-WM-TAGS" : [ "WebSocketServiceVirtualController" ]
+    }
+  }
+}

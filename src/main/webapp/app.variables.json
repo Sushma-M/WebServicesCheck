@@ -56,6 +56,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_socket" : {
+    "_id" : "wm-goToPage_socket-wm.NavigationVariable-1496126850324",
+    "name" : "goToPage_socket",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "socket",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",
