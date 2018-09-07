@@ -6,6 +6,7 @@ var _WM_APP_PROPERTIES = {
   "homePage" : "Main",
   "name" : "WebServicesCheck",
   "platformType" : "WEB",
+  "securityEnabled" : "false",
   "supportedLanguages" : "en",
   "timeFormat" : "",
   "type" : "APPLICATION",

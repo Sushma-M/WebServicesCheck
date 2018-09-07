@@ -1,20 +1,20 @@
 {
+  "headers" : { },
+  "proxy" : null,
   "endpointAddress" : "https://query.yahooapis.com/v1/public/yql",
   "method" : "GET",
   "requestBody" : "",
-  "headers" : { },
   "queryParams" : {
     "q" : "select * from geo.counties where place=\"CA\""
   },
   "sampleHttpResponseDetails" : {
+    "headers" : { },
     "responseBody" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<query xmlns:yahoo=\"http://www.yahooapis.com/v1/base.rng\" yahoo:count=\"0\" yahoo:created=\"2017-05-23T07:08:30Z\" yahoo:lang=\"en-US\"><results/></query><!-- total: 4 -->\n<!-- prod_sg3_1;paas.yql;queryyahooapiscomproductionsg3;d71ee3e0-2f7e-11e7-b30d-9cb654822760 -->\n",
     "convertedResponse" : "{\"results\":{},\"xmlns:yahoo\":\"http://www.yahooapis.com/v1/base.rng\",\"yahoo:count\":\"0\",\"yahoo:created\":\"2017-05-23T07:08:30Z\",\"yahoo:lang\":\"en-US\"}",
-    "statusCode" : 0,
-    "headers" : { }
+    "statusCode" : 0
   },
   "redirectEnabled" : true,
-  "proxy" : null,
-  "authType" : "NONE",
+  "authDetails" : null,
   "contentType" : "text/xml",
   "multiParamInfoList" : null
 }

@@ -1,0 +1,31 @@
+{
+  "endpointAddress" : "https://www.wavemakeronline.com/run-rk7pzg3qc8/WebServicesCheck/resources/files/test2.json",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Cache-Control" : [ "max-age=0" ],
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Accept-Ranges" : [ "bytes" ],
+      "ETag" : [ "\"067eb7b09e71703c9a9c7a2e61abd39b2\"" ],
+      "Last-Modified" : [ "Tue, 17 Jul 2018 11:45:35 GMT" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Date" : [ "Tue, 17 Jul 2018 11:45:56 GMT" ],
+      "Connection" : [ "keep-alive" ]
+    },
+    "responseBody" : "{\"errors\":{},\"id\":6298561,\"source_name\":\"Center for Venture Research\",\"source_code\":\"CVR\",\"code\":\"ANGEL_SECTORS\",\"name\":\"Angel Investment by Sector\",\"urlize_name\":\"Angel-Investment-by-Sector\",\"display_url\":\"http://paulcollege.unh.edu/cvr-analysis-reports\",\"description\":\"<p>Data compiled from the Center for Venture Research annual reports. The angel investment yeild rate is the percentage of ventures who have asked for investment that receive it.</p>\",\"updated_at\":\"2016-06-09T22:55:55.691Z\",\"frequency\":\"annual\",\"from_date\":\"2002-12-31\",\"to_date\":\"2015-12-31\",\"column_names\":[\"Date\",\"Software\",\"Healthcare\",\"Hardware\",\"Biotech\",\"TELECOM\",\"Manufacturing\",\"Financial Products and Services\",\"IT Services\",\"Industrial/Energy\",\"Retail\",\"Media\"],\"type\":null,\"premium\":false,\"data\":[[\"2012-12-31\",23,14,null,11,null,null,null,null,7,12,7],[\"2011-12-31\",23,19,null,13,null,null,null,7,13,null,5],[\"2010-12-31\",16,30,null,15,null,null,null,5,8,5,null],[\"2009-12-31\",19,17,null,8,null,null,5,null,17,9,null],[\"2008-12-31\",13,16,null,11,null,null,null,null,8,12,7],[\"2007-12-31\",27,19,null,12,null,null,null,null,8,6,5],[\"2006-12-31\",18,21,null,18,null,null,6,null,6,8,null],[\"2005-12-31\",18,20,8,12,null,null,null,6,6,null,6],[\"2004-12-31\",22,16,10,10,6,null,8,8,null,7,null],[\"2003-12-31\",26,13,12,11,5,12,null,null,null,null,null],[\"2002-12-31\",40,14,5,5,5,null,null,null,null,null,null]]}",
+    "convertedResponse" : null
+  },
+  "proxy" : null
+}

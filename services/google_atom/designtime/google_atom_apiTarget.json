@@ -31,7 +31,7 @@
           }
         },
         "security" : [ {
-          "WM_Rest_Service_Authorization" : [ ]
+          "basic" : [ ]
         } ],
         "x-WM-METHOD_NAME" : "invoke",
         "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
@@ -43,7 +43,7 @@
     }
   },
   "securityDefinitions" : {
-    "WM_Rest_Service_Authorization" : {
+    "basic" : {
       "type" : "basic"
     }
   },

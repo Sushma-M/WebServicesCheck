@@ -1,0 +1,134 @@
+{
+  "basePath" : "${rest.wavemakeronline4.basepath}",
+  "paths" : {
+    "/WebServicesCheck/resources/files/test2.json" : {
+      "x-WM-BASE_PATH" : "/WebServicesCheck/resources/files/test2.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "wavemakeronline4_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.wavemakeronline4.scheme}://${rest.wavemakeronline4.host}${rest.wavemakeronline4.basepath}/WebServicesCheck/resources/files/test2.json"
+    }
+  },
+  "host" : "${rest.wavemakeronline4.host}",
+  "schemes" : [ "${rest.wavemakeronline4.scheme}" ],
+  "definitions" : {
+    "dataEntryItemROOTEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.dataEntryItemROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "dataEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "dataEntryItemROOT" ],
+      "properties" : {
+        "dataEntryItemROOT" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }
+      }
+    },
+    "errors" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.errors",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "code", "column_names", "data", "description", "display_url", "errors", "frequency", "from_date", "id", "name", "premium", "source_code", "source_name", "to_date", "type", "updated_at", "urlize_name" ],
+      "properties" : {
+        "display_url" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "from_date" : {
+          "type" : "string"
+        },
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          }
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "urlize_name" : {
+          "type" : "string"
+        },
+        "premium" : {
+          "type" : "boolean"
+        },
+        "updated_at" : {
+          "type" : "string"
+        },
+        "to_date" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "column_names" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "source_code" : {
+          "type" : "string"
+        },
+        "errors" : {
+          "$ref" : "#/definitions/errors"
+        },
+        "source_name" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "4368872b-ba23-42c9-b8fb-87b8fda1ecbd",
+    "x-WM-SERVICE_ID" : "wavemakeronline4",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

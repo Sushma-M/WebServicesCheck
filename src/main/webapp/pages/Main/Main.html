@@ -1,289 +1,314 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
-    <wm-header content="header" name="header" height="auto"></wm-header>
-    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
-    <wm-content name="content">
-        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
-        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
-            <wm-accordion name="accordion1">
-                <wm-accordionpane name="accordionpane1" title="Google Service" iconclass="fa fa-google">
-                    <wm-composite name="composite1">
-                        <wm-label class="col-md-3 control-label" name="SourceCity1" caption="Source"></wm-label>
-                        <wm-container class="col-md-9" name="container1">
-                            <wm-radioset height="auto" name="SourceRadioset1" layout="inline" dataset="Hyderabd, Mumbai, Chennai" selectedvalue="Hyderabd"></wm-radioset>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite2">
-                        <wm-label class="col-md-3 control-label" name="DestinationCity1" caption="Destination"></wm-label>
-                        <wm-container class="col-md-9" name="container2">
-                            <wm-radioset height="auto" name="DestinationRadioset2" layout="inline" dataset="Kolkata, Pune, Delhi" selectedvalue="Kolkata"></wm-radioset>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-grid title="" dataset="bind:Variables.GoogleapisInvoke.dataSet" navigation="None" name="GoogleServiceGrid1">
-                        <wm-grid-column binding="status" caption="Status" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="route.leg.distance.text" caption="Route.leg.distance Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="route.leg.distance.value" caption="Route.leg.distance Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="route.leg.duration.text" caption="Route.leg.duration Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="route.leg.duration.value" caption="Route.leg.duration Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="route.summary" caption="Route Summary" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane2" title="REST with query params" iconclass="fa fa-google-plus" on-expand="Variables.Googleapis_jsonInvoke.invoke()">
-                    <wm-composite name="composite3">
-                        <wm-label class="col-md-3 control-label" name="SourceCity2" caption="Source"></wm-label>
-                        <wm-container class="col-md-9" name="container3">
-                            <wm-switch datavalue="Mumbai" name="Sourceswitch1" dataset="Hyderabd, Mumbai, Chennai"></wm-switch>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite4">
-                        <wm-label class="col-md-3 control-label" name="DestinationCity2" caption="Destination"></wm-label>
-                        <wm-container class="col-md-9" name="container4">
-                            <wm-switch datavalue="Delhi" name="Destinationswitch2" dataset="Kolkata, Pune, Delhi"></wm-switch>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-grid title="" dataset="bind:Variables.Googleapis_jsonInvoke.dataSet" navigation="None" name="GoogleServiceGrid2">
-                        <wm-grid-column binding="status" caption="Status" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="routes[0].legs[0].duration.text" caption="Routes[0].legs[0].duration Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="routes[0].legs[0].duration.value" caption="Routes[0].legs[0].duration Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="routes[0].legs[0].distance.text" caption="Routes[0].legs[0].distance Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                        <wm-grid-column binding="routes[0].legs[0].distance.value" caption="Routes[0].legs[0].distance Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane3" title="REST with path params" iconclass="fa fa-google-plus-square">
-                    <wm-composite name="composite6">
-                        <wm-label class="col-md-3 control-label" name="format" caption="format"></wm-label>
-                        <wm-container class="col-md-9" name="container6">
-                            <wm-checkbox caption="formatToggle" type="toggle" name="formatToggle1" datavalue="json" checkedvalue="xml" uncheckedvalue="json"></wm-checkbox>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-grid title="" dataset="bind:Variables.googleapis_typeInvoke.dataSet" navigation="None" name="GoogleServiceGrid3"></wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane4" title="REST with Basic Auth" iconclass="wi wi-security" on-expand="Variables.Google_atomInvoke.invoke()">
-                    <wm-livelist listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.Google_atomInvoke.dataSet.entry" navigation="Basic" name="livelist2">
-                        <wm-listtemplate layout="inline" name="listtemplate2">
-                            <wm-container class="media-body" padding="unset unset unset 1.25em" name="container10">
-                                <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.Google_atomInvoke.dataSet.entry.author.name" fontunit="em"></wm-label>
-                                <wm-label name="Time" caption="bind:Variables.Google_atomInvoke.dataSet.entry.modified | timeFromNow" class="pull-right" margin="0px unset unset unset"></wm-label>
-                                <wm-label caption="bind:Variables.Google_atomInvoke.dataSet.entry.title" class="h5" margin="0px unset unset unset" name="JobTitle"></wm-label>
-                                <wm-label name="Content" caption="bind:Variables.Google_atomInvoke.dataSet.entry.summary" class="p text-muted"></wm-label>
-                                <wm-label padding="unset 0.5em" name="label23" caption="bind:Variables.Google_atomInvoke.dataSet.entry[$i].author.email"></wm-label>
-                            </wm-container>
-                            <wm-container class="media-right" name="container11"></wm-container>
-                        </wm-listtemplate>
-                    </wm-livelist>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane5" title="POST type REST service" iconclass="wi wi-create">
-                    <wm-grid title="" dataset="bind:Variables.Reimaginebanking_postInvoke.dataSet" navigation="Basic" name="grid4">
-                        <wm-grid-column binding="code" caption="Code" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="message" caption="Message" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="objectCreated.nickname" caption="ObjectCreated Nickname" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="objectCreated.account_number" caption="ObjectCreated Account Number" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                    <wm-composite name="composite6_1">
-                        <wm-label class="col-md-3 control-label" name="label12" caption="account_number"></wm-label>
-                        <wm-container class="col-md-9" name="container11_1">
-                            <wm-text name="account_number1" datavalue="stringstringstri"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite7">
-                        <wm-label class="col-md-3 control-label" name="label13" caption="balance"></wm-label>
-                        <wm-container class="col-md-9" name="container12">
-                            <wm-text name="balance" type="number" datavalue="2000"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite9">
-                        <wm-label class="col-md-3 control-label" name="label15" caption="rewards"></wm-label>
-                        <wm-container class="col-md-9" name="container14">
-                            <wm-text name="rewards" type="number" datavalue="300"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite10">
-                        <wm-label class="col-md-3 control-label" name="label16" caption="nickname"></wm-label>
-                        <wm-container class="col-md-9" name="container15">
-                            <wm-text name="nickname" datavalue="NoName"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite13">
-                        <wm-label class="col-md-3 control-label" name="label19" caption="account_type"></wm-label>
-                        <wm-container class="col-md-9" name="container18">
-                            <wm-radioset height="auto" name="account_type" layout="inline" dataset="Credit Card, Savings, Checking" selectedvalue="Savings"></wm-radioset>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-button class="btn-default" caption="Create New Account!" type="button" margin="unset 0.5em" name="postbutton2" on-click="Variables.Reimaginebanking_postInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane6" title="PUT type REST service" iconclass="fa fa-edit">
-                    <wm-grid title="" dataset="bind:Variables.Reimaginebanking_putInvoke.dataSet" navigation="None" name="grid5">
-                        <wm-grid-column binding="message" caption="Message" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="code" caption="Code" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                    <wm-composite name="composite14">
-                        <wm-label class="col-md-3 control-label" name="label20" caption="nickname"></wm-label>
-                        <wm-container class="col-md-9" name="container19">
-                            <wm-text name="nickname2" datavalue="newName"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-composite name="composite15">
-                        <wm-label class="col-md-3 control-label" name="label21" caption="account_number"></wm-label>
-                        <wm-container class="col-md-9" name="container20">
-                            <wm-text name="account_number2" datavalue="1234567890123456"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-button class="btn-default" caption="update account!" type="button" margin="unset 0.5em" name="button3" on-dblclick="Variables.Reimaginebanking_putInvoke.invoke()" on-click="Variables.Reimaginebanking_putInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane7" title="DELETE type REST service" iconclass="wi wi-delete-forever">
-                    <wm-composite name="composite15_1">
-                        <wm-label class="col-md-3 control-label" name="label24" caption="account_number"></wm-label>
-                        <wm-container class="col-md-9" name="container16">
-                            <wm-text name="account_number3" datavalue="bind:Variables.Reimaginebanking_getInvoke.firstRecord._id"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-grid title="" dataset="bind:Variables.reimaginebanking_delete.dataSet" navigation="None" name="grid7"></wm-grid>
-                    <wm-label padding="unset 0.5em" name="label25" caption="bind:Variables.reimaginebanking_delete.dataSet"></wm-label>
-                    <wm-button class="btn-default" caption="Delete Account!" type="button" margin="unset 0.5em" name="button4" on-click="Variables.reimaginebanking_delete.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane8" title="REST with xml" iconclass="fa fa-subscript" on-expand="Variables.RandomuserInvoke.invoke()">
-                    <wm-livelist listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" dataset="bind:Variables.RandomuserInvoke.dataSet.results" navigation="None" name="livelist2_1" enablereorder="false">
-                        <wm-listtemplate layout="media" name="listtemplate2_1">
-                            <wm-card name="card1">
-                                <wm-card-content fontsize="0.8" fontunit="em" name="card_content1">
-                                    <wm-layoutgrid columns="1" name="layoutgrid1">
-                                        <wm-gridrow name="gridrow2">
-                                            <wm-gridcolumn columnwidth="12" name="gridcolumn3">
-                                                <wm-picture name="Picture" width="100%" picturesource="bind:Variables.RandomuserInvoke.dataSet.results.picture.large"></wm-picture>
-                                            </wm-gridcolumn>
-                                        </wm-gridrow>
-                                        <wm-gridrow name="gridrow3">
-                                            <wm-gridcolumn columnwidth="12" name="gridcolumn4">
-                                                <wm-label name="ID" caption="bind:Variables.RandomuserInvoke.dataSet.results.id.value" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
-                                                <wm-label name="Name" caption="bind:Variables.RandomuserInvoke.dataSet.results.name.first" class="h4" margin="0px unset" whitespace="nowrap"></wm-label>
-                                                <wm-label name="JobTitle" caption="bind:Variables.RandomuserInvoke.dataSet.results.dob" class="h5" margin="0px unset unset unset" whitespace="nowrap"></wm-label>
-                                                <wm-label name="Department" caption="bind:Variables.RandomuserInvoke.dataSet.results.gender" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label>
-                                                <wm-label name="Location" caption="bind:Variables.RandomuserInvoke.dataSet.results.location.city" class="text-muted p" whitespace="nowrap"></wm-label>
-                                                <wm-anchor name="PhoneNumber" caption="bind:Variables.RandomuserInvoke.dataSet.results.phone" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor>
-                                                <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="bind:Variables.RandomuserInvoke.dataSet.results.email" whitespace="nowrap"></wm-anchor>
-                                            </wm-gridcolumn>
-                                        </wm-gridrow>
-                                    </wm-layoutgrid>
-                                </wm-card-content>
-                            </wm-card>
-                        </wm-listtemplate>
-                    </wm-livelist>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane9" title="REST with Headers" iconclass="fa fa-header">
-                    <wm-composite name="composite13_1">
-                        <wm-checkbox caption="true/false" class="col-md-push-3 col-md-9" name="checkbox1" datavalue="bind:Variables.emailValidatorInvoke.dataSet.isValid"></wm-checkbox>
-                    </wm-composite>
-                    <wm-composite name="composite14_1">
-                        <wm-label class="col-md-3 control-label" name="label22" caption="bind:Variables.emailValidatorInvoke.dataSet.isValid"></wm-label>
-                        <wm-container class="col-md-9" name="container15_1">
-                            <wm-text name="emailtext"></wm-text>
-                        </wm-container>
-                    </wm-composite>
-                    <wm-button class="btn-default" caption="valid or not" type="button" margin="unset 0.5em" name="button3_1" on-click="Variables.emailValidatorInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane10" title="REST to verify Custom Data &amp; Key Mapping" iconclass="wi wi-data-usage" on-expand="Variables.QuandlInvoke.invoke()">
-                    <wm-grid title="" dataset="bind:Variables.QuandlInvoke.dataSet.wmTransformedData" navigation="Basic" name="grid8">
-                        <wm-grid-column binding="Date" caption="Date" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Software" caption="Software" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Healthcare" caption="Healthcare" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Hardware" caption="Hardware" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Biotech" caption="Biotech" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="TELECOM" caption="Telecom" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Manufacturing" caption="Manufacturing" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Financial_Products_and_Services" caption="Financial Products And Services" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="IT_Services" caption="It Services" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="Industrial_Energy" caption="Industrial Energy" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane11" title="REST without query, header, auth parameters" iconclass="wi wi-clear-all" on-expand="Variables.Randomuser2Invoke.invoke()">
-                    <wm-grid title="" dataset="bind:Variables.Randomuser2Invoke.dataSet.results" navigation="None" name="grid8_1">
-                        <wm-grid-column binding="picture.medium" widget-type="image" caption="Picture Medium" pcdisplay="true" mobiledisplay="true">
-                            <wm-picture picturesource="{{row.getProperty('picture.medium')}}" hint="{{row.getProperty('picture.medium')}}" class="" data-ng-class=""></wm-picture>
-                        </wm-grid-column>
-                        <wm-grid-column binding="name.first" caption="Name First" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="gender" caption="Gender" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="phone" caption="Phone" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="email" caption="Email" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="location.city" caption="Location City" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane12" title="REST which is useful to display charts" iconclass="wi wi-pie-chart" on-expand="Variables.Fda_chartInvoke.invoke()">
-                    <wm-chart type="Pie" title="Pie Chart" height="500px" iconclass="wi wi-pie-chart" name="chart1" dataset="bind:Variables.Fda_chartInvoke.dataSet.results" xaxisdatakey="term" yaxisdatakey="count" showlegend="hide" width="auto"></wm-chart>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane13" title="REST Yahoo Web service" iconclass="fa fa-yahoo" on-expand="Variables.YahooapisInvoke.invoke()">
-                    <wm-grid title="" dataset="bind:Variables.YahooapisInvoke.dataSet" navigation="Basic" name="grid9">
-                        <wm-grid-column binding="yahoo:count" caption="Yahoo Count" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="yahoo:created" caption="Yahoo Created" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="results.industry.id" caption="Results.industry Id" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="results.industry.name" caption="Results.industry Name" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="yahoo:lang" caption="Yahoo Lang" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="xmlns:yahoo" caption="Xmlns Yahoo" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane14" title="REST service without proxy" iconclass="fa fa-product-hunt" on-expand="Variables.Yahooapis_noproxyInvoke.invoke()">
-                    <wm-grid title="" dataset="bind:Variables.Yahooapis_noproxyInvoke.dataSet" navigation="Basic" name="grid10">
-                        <wm-grid-column binding="yahoo:count" caption="Yahoo Count" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="yahoo:created" caption="Yahoo Created" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="yahoo:lang" caption="Yahoo Lang" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="xmlns:yahoo" caption="Xmlns Yahoo" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane15" title="REST with Multipart" iconclass="wi wi-multiline-chart">
-                    <wm-fileupload name="fileupload1" service="FileService" operation="uploadFile" mode="Select"></wm-fileupload>
-                    <wm-picture name="picture2" picturesource="bind:Variables.Pdf2imageInvoke.dataSet.body.img.src"></wm-picture>
-                    <wm-grid title="" dataset="bind:Variables.Pdf2imageInvoke.dataSet" navigation="None" name="grid11">
-                        <wm-grid-column binding="body.img.alt" caption="Body.img Alt" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="body.img.src" caption="Body.img Src" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                    <wm-button class="btn-default" caption="Convert to Image" type="button" margin="unset 0.5em" name="button5" on-click="Variables.Pdf2imageInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane16" title="REST File Download" iconclass="wi wi-file-download">
-                    <wm-button class="btn-default" caption="Download Icon" type="button" margin="unset 0.5em" name="button6" on-click="Variables.iconfinderInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane17" title="REST File Download with header" iconclass="fa fa-download">
-                    <wm-button class="btn-default" caption="Web2Pdf" type="button" margin="unset 0.5em" name="button7" on-click="Variables.web2pdfInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane18" title="REST with two query parameters with same name" iconclass="wi wi-equalizer" on-expand="Variables.RechtspraakInvoke.invoke()">
-                    <wm-grid title="" dataset="bind:Variables.RechtspraakInvoke.dataSet.entry[$i].link" navigation="Basic" name="grid12" iconclass="">
-                        <wm-grid-column binding="rel" caption="Rel" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="type" caption="Type" type="string" backgroundcolor="" textcolor="" col-class="" col-ng-class="" accessroles="" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                        <wm-grid-column binding="href" caption="Href" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane19" title="REST WM APIs with security" iconclass="fa fa-user-secret">
-                    <wm-grid title="" dataset="bind:Variables.WM_live_with_securityInvoke.dataSet" navigation="Basic" name="grid13">
-                        <wm-grid-column binding="balance" caption="Balance" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="num" caption="Num" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="is_vip" caption="Is Vip" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="nickname" caption="Nickname" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane20" title="REST WM APIs without Security" iconclass="wi wi-do-not-disturb-off">
-                    <wm-grid title="" dataset="bind:Variables.WM_live_with_proxyInvoke.dataSet.content" navigation="Basic" name="grid14">
-                        <wm-grid-column binding="extension" caption="Extension" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="lastName" caption="Last Name" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="email" caption="Email" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="firstName" caption="First Name" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="employeeNumber" caption="Employee Number" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="jobTitle" caption="Job Title" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                </wm-accordionpane>
-                <wm-accordionpane name="accordionpane21" title="REST WM APIs without proxy" iconclass="wi wi-accessibility"></wm-accordionpane>
-                <wm-accordionpane name="accordionpane22" title="REST WM APIs with security and without Proxy" iconclass="wi wi-account-box"></wm-accordionpane>
-                <wm-accordionpane name="accordionpane23" title="REST Multipart WM APIs" iconclass="wi wi-attach-file">
-                    <wm-fileupload name="fileupload2" service="FileService" operation="uploadFile" mode="Select"></wm-fileupload>
-                    <wm-grid title="" dataset="bind:Variables.WM_live_multipartInvoke.dataSet" navigation="Basic" name="grid15">
-                        <wm-grid-column binding="fileName" caption="File Name" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="success" caption="Success" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="length" caption="Length" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="path" caption="Path" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                        <wm-grid-column binding="errorMessage" caption="Error Message" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                    </wm-grid>
-                    <wm-button class="btn-default" caption="Upload File" type="button" margin="unset 0.5em" name="button8" on-click="Variables.WM_live_multipartInvoke.invoke()"></wm-button>
-                </wm-accordionpane>
-            </wm-accordion>
-        </wm-page-content>
-        <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel>
-    </wm-content>
-    <wm-footer name="footer" content="footer"></wm-footer>
+<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main"> 
+    <wm-header content="header" name="header" height="auto"></wm-header> 
+    <wm-top-nav name="topnav" content="topnav"></wm-top-nav> 
+    <wm-content name="content"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px"> 
+            <wm-accordion name="accordion1"> 
+                <wm-accordionpane name="accordionpane1" title="Google Service" iconclass="fa fa-google"> 
+                    <wm-composite name="composite1"> 
+                        <wm-label class="col-md-3 control-label" name="SourceCity1" caption="Source"></wm-label> 
+                        <wm-container class="col-md-9" name="container1"> 
+                            <wm-radioset height="auto" name="SourceRadioset1" layout="inline" dataset="Hyderabd, Mumbai, Chennai" selectedvalue="Hyderabd"></wm-radioset> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite2"> 
+                        <wm-label class="col-md-3 control-label" name="DestinationCity1" caption="Destination"></wm-label> 
+                        <wm-container class="col-md-9" name="container2"> 
+                            <wm-radioset height="auto" name="DestinationRadioset2" layout="inline" dataset="Kolkata, Pune, Delhi" selectedvalue="Kolkata"></wm-radioset> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-table title="" dataset="bind:Variables.GoogleapisInvoke.dataSet" navigation="None" name="GoogleServiceGrid1"> 
+                        <wm-table-column binding="status" caption="Status" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="route.leg.distance.text" caption="Route.leg.distance Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="route.leg.distance.value" caption="Route.leg.distance Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="route.leg.duration.text" caption="Route.leg.duration Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="route.leg.duration.value" caption="Route.leg.duration Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="route.summary" caption="Route Summary" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane2" title="REST with query params" iconclass="fa fa-google-plus" on-expand="Variables.Googleapis_jsonInvoke.invoke()"> 
+                    <wm-composite name="composite3"> 
+                        <wm-label class="col-md-3 control-label" name="SourceCity2" caption="Source"></wm-label> 
+                        <wm-container class="col-md-9" name="container3"> 
+                            <wm-switch datavalue="Mumbai" name="Sourceswitch1" dataset="Hyderabd, Mumbai, Chennai"></wm-switch> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite4"> 
+                        <wm-label class="col-md-3 control-label" name="DestinationCity2" caption="Destination"></wm-label> 
+                        <wm-container class="col-md-9" name="container4"> 
+                            <wm-switch datavalue="Delhi" name="Destinationswitch2" dataset="Kolkata, Pune, Delhi"></wm-switch> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-table title="" dataset="bind:Variables.Googleapis_jsonInvoke.dataSet" navigation="None" name="GoogleServiceGrid2"> 
+                        <wm-table-column binding="status" caption="Status" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="routes[0].legs[0].duration.text" caption="Routes[0].legs[0].duration Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="routes[0].legs[0].duration.value" caption="Routes[0].legs[0].duration Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="routes[0].legs[0].distance.text" caption="Routes[0].legs[0].distance Text" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="routes[0].legs[0].distance.value" caption="Routes[0].legs[0].distance Value" type="string" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane3" title="REST with path params" iconclass="fa fa-google-plus-square"> 
+                    <wm-composite name="composite6"> 
+                        <wm-label class="col-md-3 control-label" name="format" caption="format"></wm-label> 
+                        <wm-container class="col-md-9" name="container6"> 
+                            <wm-checkbox caption="formatToggle" type="toggle" name="formatToggle1" datavalue="json" checkedvalue="xml" uncheckedvalue="json"></wm-checkbox> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-table title="" dataset="bind:Variables.googleapis_typeInvoke.dataSet" navigation="None" name="GoogleServiceGrid3"></wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane4" title="REST with Basic Auth" iconclass="wi wi-security" on-expand="Variables.Google_atomInvoke.invoke()"> 
+                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.Google_atomInvoke.dataSet.entry" navigation="Basic" name="livelist2"> 
+                        <wm-listtemplate layout="inline" name="listtemplate2"> 
+                            <wm-container class="media-body" padding="unset unset unset 1.25em" name="container10"> 
+                                <wm-label name="Name" class="media-heading pull-left" caption="bind:Variables.Google_atomInvoke.dataSet.entry.author.name" fontunit="em"></wm-label> 
+                                <wm-label name="Time" caption="bind:Variables.Google_atomInvoke.dataSet.entry.modified | timeFromNow" class="pull-right" margin="0px unset unset unset"></wm-label> 
+                                <wm-label caption="bind:Variables.Google_atomInvoke.dataSet.entry.title" class="h5" margin="0px unset unset unset" name="JobTitle"></wm-label> 
+                                <wm-label name="Content" caption="bind:Variables.Google_atomInvoke.dataSet.entry.summary" class="p text-muted"></wm-label> 
+                                <wm-label padding="unset 0.5em" name="label23" caption="bind:Variables.Google_atomInvoke.dataSet.entry[$i].author.email"></wm-label> 
+                            </wm-container> 
+                            <wm-container class="media-right" name="container11"></wm-container> 
+                        </wm-listtemplate> 
+                    </wm-list> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane5" title="POST type REST service" iconclass="wi wi-create"> 
+                    <wm-table title="" dataset="bind:Variables.Reimaginebanking_postInvoke.dataSet" navigation="Basic" name="grid4"> 
+                        <wm-table-column binding="code" caption="Code" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="message" caption="Message" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="objectCreated.nickname" caption="ObjectCreated Nickname" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="objectCreated.account_number" caption="ObjectCreated Account Number" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                    <wm-composite name="composite6_1"> 
+                        <wm-label class="col-md-3 control-label" name="label12" caption="account_number"></wm-label> 
+                        <wm-container class="col-md-9" name="container11_1"> 
+                            <wm-text name="account_number1" datavalue="stringstringstri"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite7"> 
+                        <wm-label class="col-md-3 control-label" name="label13" caption="balance"></wm-label> 
+                        <wm-container class="col-md-9" name="container12"> 
+                            <wm-text name="balance" type="number" datavalue="2000"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite9"> 
+                        <wm-label class="col-md-3 control-label" name="label15" caption="rewards"></wm-label> 
+                        <wm-container class="col-md-9" name="container14"> 
+                            <wm-text name="rewards" type="number" datavalue="300"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite10"> 
+                        <wm-label class="col-md-3 control-label" name="label16" caption="nickname"></wm-label> 
+                        <wm-container class="col-md-9" name="container15"> 
+                            <wm-text name="nickname" datavalue="NoName"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite13"> 
+                        <wm-label class="col-md-3 control-label" name="label19" caption="account_type"></wm-label> 
+                        <wm-container class="col-md-9" name="container18"> 
+                            <wm-radioset height="auto" name="account_type" layout="inline" dataset="Credit Card, Savings, Checking" selectedvalue="Savings"></wm-radioset> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-button class="btn-default" caption="Create New Account!" type="button" margin="unset 0.5em" name="postbutton2" on-click="Variables.Reimaginebanking_postInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane6" title="PUT type REST service" iconclass="fa fa-edit"> 
+                    <wm-table title="" dataset="bind:Variables.Reimaginebanking_putInvoke.dataSet" navigation="None" name="grid5"> 
+                        <wm-table-column binding="message" caption="Message" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="code" caption="Code" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                    <wm-composite name="composite14"> 
+                        <wm-label class="col-md-3 control-label" name="label20" caption="nickname"></wm-label> 
+                        <wm-container class="col-md-9" name="container19"> 
+                            <wm-text name="nickname2" datavalue="newName"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-composite name="composite15"> 
+                        <wm-label class="col-md-3 control-label" name="label21" caption="account_number"></wm-label> 
+                        <wm-container class="col-md-9" name="container20"> 
+                            <wm-text name="account_number2" datavalue="1234567890123456"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-button class="btn-default" caption="update account!" type="button" margin="unset 0.5em" name="button3" on-dblclick="Variables.Reimaginebanking_putInvoke.invoke()" on-click="Variables.Reimaginebanking_putInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane7" title="DELETE type REST service" iconclass="wi wi-delete-forever"> 
+                    <wm-composite name="composite15_1"> 
+                        <wm-label class="col-md-3 control-label" name="label24" caption="account_number"></wm-label> 
+                        <wm-container class="col-md-9" name="container16"> 
+                            <wm-text name="account_number3" datavalue="bind:Variables.Reimaginebanking_getInvoke.firstRecord._id"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-table title="" dataset="bind:Variables.reimaginebanking_delete.dataSet" navigation="None" name="grid7"></wm-table> 
+                    <wm-label padding="unset 0.5em" name="label25" caption="bind:Variables.reimaginebanking_delete.dataSet"></wm-label> 
+                    <wm-button class="btn-default" caption="Delete Account!" type="button" margin="unset 0.5em" name="button4" on-click="Variables.reimaginebanking_delete.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane8" title="REST with xml" iconclass="fa fa-subscript" on-expand="Variables.RandomuserInvoke.invoke()"> 
+                    <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-4" class="list-card" dataset="bind:Variables.RandomuserInvoke.dataSet.results" navigation="None" name="livelist2_1" enablereorder="false"> 
+                        <wm-listtemplate layout="media" name="listtemplate2_1"> 
+                            <wm-card name="card1"> 
+                                <wm-card-content fontsize="0.8" fontunit="em" name="card_content1"> 
+                                    <wm-layoutgrid columns="1" name="layoutgrid1"> 
+                                        <wm-gridrow name="gridrow2"> 
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn3"> 
+                                                <wm-picture name="Picture" width="100%" picturesource="bind:Variables.RandomuserInvoke.dataSet.results.picture.large"></wm-picture> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                        <wm-gridrow name="gridrow3"> 
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn4"> 
+                                                <wm-label name="ID" caption="bind:Variables.RandomuserInvoke.dataSet.results.id.value" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label> 
+                                                <wm-label name="Name" caption="bind:Variables.RandomuserInvoke.dataSet.results.name.first" class="h4" margin="0px unset" whitespace="nowrap"></wm-label> 
+                                                <wm-label name="JobTitle" caption="bind:Variables.RandomuserInvoke.dataSet.results.dob" class="h5" margin="0px unset unset unset" whitespace="nowrap"></wm-label> 
+                                                <wm-label name="Department" caption="bind:Variables.RandomuserInvoke.dataSet.results.gender" class="p text-muted" margin="unset unset 0px unset" whitespace="nowrap"></wm-label> 
+                                                <wm-label name="Location" caption="bind:Variables.RandomuserInvoke.dataSet.results.location.city" class="text-muted p" whitespace="nowrap"></wm-label> 
+                                                <wm-anchor name="PhoneNumber" caption="bind:Variables.RandomuserInvoke.dataSet.results.phone" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor> 
+                                                <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="bind:Variables.RandomuserInvoke.dataSet.results.email" whitespace="nowrap"></wm-anchor> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-card-content> 
+                            </wm-card> 
+                        </wm-listtemplate> 
+                    </wm-list> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane9" title="REST with Headers" iconclass="fa fa-header"> 
+                    <wm-composite name="composite13_1"> 
+                        <wm-checkbox caption="true/false" class="col-md-push-3 col-md-9" name="checkbox1" datavalue="bind:Variables.emailValidatorInvoke.dataSet.isValid"></wm-checkbox> 
+                    </wm-composite> 
+                    <wm-composite name="composite14_1"> 
+                        <wm-label class="col-md-3 control-label" name="label22" caption="bind:Variables.emailValidatorInvoke.dataSet.isValid"></wm-label> 
+                        <wm-container class="col-md-9" name="container15_1"> 
+                            <wm-text name="emailtext"></wm-text> 
+                        </wm-container> 
+                    </wm-composite> 
+                    <wm-button class="btn-default" caption="valid or not" type="button" margin="unset 0.5em" name="button3_1" on-click="Variables.emailValidatorInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane10" title="REST to verify Custom Data &amp; Key Mapping" iconclass="wi wi-data-usage" on-expand="Variables.QuandlInvoke.invoke()"> 
+                    <wm-table title="" dataset="bind:Variables.QuandlInvoke.dataSet.wmTransformedData" navigation="Basic" name="grid8"> 
+                        <wm-table-column binding="Date" caption="Date" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Software" caption="Software" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Healthcare" caption="Healthcare" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Hardware" caption="Hardware" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Biotech" caption="Biotech" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="TELECOM" caption="Telecom" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Manufacturing" caption="Manufacturing" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Financial_Products_and_Services" caption="Financial Products And Services" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="IT_Services" caption="It Services" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="Industrial_Energy" caption="Industrial Energy" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane11" title="REST without query, header, auth parameters" iconclass="wi wi-clear-all" on-expand="Variables.Randomuser2Invoke.invoke()"> 
+                    <wm-table title="" dataset="bind:Variables.Randomuser2Invoke.dataSet.results" navigation="None" name="grid8_1"> 
+                        <wm-table-column binding="picture.medium" widget-type="image" caption="Picture Medium" pcdisplay="true" mobiledisplay="true"> 
+                            <wm-picture picturesource="{{row.getProperty('picture.medium')}}" hint="{{row.getProperty('picture.medium')}}" class="" data-ng-class=""></wm-picture> 
+                        </wm-table-column> 
+                        <wm-table-column binding="name.first" caption="Name First" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="gender" caption="Gender" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="phone" caption="Phone" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="email" caption="Email" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="location.city" caption="Location City" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane12" title="REST which is useful to display charts" iconclass="wi wi-pie-chart" on-expand="Variables.Fda_chartInvoke.invoke()"> 
+                    <wm-chart type="Pie" title="Pie Chart" height="500px" iconclass="wi wi-pie-chart" name="chart1" dataset="bind:Variables.Fda_chartInvoke.dataSet.results" xaxisdatakey="term" yaxisdatakey="count" showlegend="hide" width="auto"></wm-chart> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane13" title="REST Yahoo Web service" iconclass="fa fa-yahoo" on-expand="Variables.YahooapisInvoke.invoke()"> 
+                    <wm-table title="" dataset="bind:Variables.YahooapisInvoke.dataSet" navigation="Basic" name="grid9"> 
+                        <wm-table-column binding="yahoo:count" caption="Yahoo Count" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="yahoo:created" caption="Yahoo Created" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="results.industry.id" caption="Results.industry Id" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="results.industry.name" caption="Results.industry Name" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="yahoo:lang" caption="Yahoo Lang" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="xmlns:yahoo" caption="Xmlns Yahoo" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane14" title="REST service without proxy" iconclass="fa fa-product-hunt" on-expand="Variables.Yahooapis_noproxyInvoke.invoke()"> 
+                    <wm-table title="" dataset="bind:Variables.Yahooapis_noproxyInvoke.dataSet" navigation="Basic" name="grid10"> 
+                        <wm-table-column binding="yahoo:count" caption="Yahoo Count" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="yahoo:created" caption="Yahoo Created" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="yahoo:lang" caption="Yahoo Lang" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="xmlns:yahoo" caption="Xmlns Yahoo" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane15" title="REST with Multipart" iconclass="wi wi-multiline-chart"> 
+                    <wm-fileupload name="fileupload1" service="FileService" operation="uploadFile" mode="Select"></wm-fileupload> 
+                    <wm-picture name="picture2" picturesource="bind:Variables.Pdf2imageInvoke.dataSet.body.img.src"></wm-picture> 
+                    <wm-table title="" dataset="bind:Variables.Pdf2imageInvoke.dataSet" navigation="None" name="grid11"> 
+                        <wm-table-column binding="body.img.alt" caption="Body.img Alt" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="body.img.src" caption="Body.img Src" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                    <wm-button class="btn-default" caption="Convert to Image" type="button" margin="unset 0.5em" name="button5" on-click="Variables.Pdf2imageInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane16" title="REST File Download" iconclass="wi wi-file-download"> 
+                    <wm-button class="btn-default" caption="Download Icon" type="button" margin="unset 0.5em" name="button6" on-click="Variables.iconfinderInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane17" title="REST File Download with header" iconclass="fa fa-download"> 
+                    <wm-button class="btn-default" caption="Web2Pdf" type="button" margin="unset 0.5em" name="button7" on-click="Variables.web2pdfInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane18" title="REST with two query parameters with same name" iconclass="wi wi-equalizer" on-expand="Variables.RechtspraakInvoke.invoke()"> 
+                    <wm-table title="" dataset="bind:Variables.RechtspraakInvoke.dataSet.entry[$i].link" navigation="Basic" name="grid12" iconclass=""> 
+                        <wm-table-column binding="rel" caption="Rel" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="type" caption="Type" type="string" backgroundcolor="" textcolor="" col-class="" col-ng-class="" accessroles="" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                        <wm-table-column binding="href" caption="Href" type="string" pcdisplay="true" mobiledisplay="true" searchable="true" readonly="undefined"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane19" title="REST WM APIs with security" iconclass="fa fa-user-secret"> 
+                    <wm-table title="" dataset="bind:Variables.WM_live_with_securityInvoke.dataSet" navigation="Basic" name="grid13"> 
+                        <wm-table-column binding="balance" caption="Balance" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="num" caption="Num" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="is_vip" caption="Is Vip" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="nickname" caption="Nickname" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane20" title="REST WM APIs without Security" iconclass="wi wi-do-not-disturb-off"> 
+                    <wm-table title="" dataset="bind:Variables.WM_live_with_proxyInvoke.dataSet.content" navigation="Basic" name="grid14"> 
+                        <wm-table-column binding="extension" caption="Extension" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="lastName" caption="Last Name" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="email" caption="Email" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="firstName" caption="First Name" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="employeeNumber" caption="Employee Number" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="jobTitle" caption="Job Title" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                </wm-accordionpane> 
+                <wm-accordionpane name="accordionpane21" title="REST WM APIs without proxy" iconclass="wi wi-accessibility"></wm-accordionpane> 
+                <wm-accordionpane name="accordionpane22" title="REST WM APIs with security and without Proxy" iconclass="wi wi-account-box"></wm-accordionpane> 
+                <wm-accordionpane name="accordionpane23" title="REST Multipart WM APIs" iconclass="wi wi-attach-file"> 
+                    <wm-fileupload name="fileupload2" service="FileService" operation="uploadFile" mode="Select"></wm-fileupload> 
+                    <wm-table title="" dataset="bind:Variables.WM_live_multipartInvoke.dataSet" navigation="Basic" name="grid15"> 
+                        <wm-table-column binding="fileName" caption="File Name" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="success" caption="Success" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="length" caption="Length" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="path" caption="Path" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                        <wm-table-column binding="errorMessage" caption="Error Message" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                    </wm-table> 
+                    <wm-button class="btn-default" caption="Upload File" type="button" margin="unset 0.5em" name="button8" on-click="Variables.WM_live_multipartInvoke.invoke()"></wm-button> 
+                </wm-accordionpane> 
+            </wm-accordion> 
+            <wm-fileupload name="fileupload3" service="FileService" operation="uploadFile"></wm-fileupload> 
+            <wm-container name="container17" content="Partial2"></wm-container> 
+            <wm-prefab prefabname="googlemaps" name="googlemaps1" maptype="Markers" waypoints="bind:Variables.RandomuserInvoke.dataSet.results.location" viewtype="ROADMAP" locations="bind:Variables.serviceVariable2.dataSet" markertype="LatLng" lat="results.location.city"></wm-prefab> 
+            <wm-picture name="picture3" picturesource="resources/files/test.json" on-click="Actions.notificationAction1.invoke()"></wm-picture> 
+            <wm-table name="executeTestQueryTable1" title="" dataset="bind:Variables.LeaveDBExecuteTestQuery.dataSet" navigation="Basic"> 
+                <wm-table-column binding="empId" caption="Emp Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="empUid" caption="Emp Uid" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empName" caption="Emp Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empPwd" caption="Emp Pwd" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="designation" caption="Designation" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="managerId" caption="Manager Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="managers" caption="Managers" pcdisplay="true" mobiledisplay="true" type="managers"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empId" caption="Empleaves Emp Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="empLeaves.remainLeaves" caption="Empleaves Remain Leaves" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="empLeaves.totalLeaves" caption="Empleaves Total Leaves" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.empId" caption="Empleaves.empdetails Emp Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.empLeaves" caption="Empleaves.empdetails Emp Leaves" pcdisplay="true" mobiledisplay="true" type="empleaves"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.empUid" caption="Empleaves.empdetails Emp Uid" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.empName" caption="Empleaves.empdetails Emp Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.empPwd" caption="Empleaves.empdetails Emp Pwd" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.designation" caption="Empleaves.empdetails Designation" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.managerId" caption="Empleaves.empdetails Manager Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.managers.name" caption="Empleaves.empdetails.managers Name" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="empLeaves.empDetails.managers.managerId" caption="Empleaves.empdetails.managers Manager Id" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+            </wm-table> 
+        </wm-page-content> 
+        <wm-right-panel columnwidth="2" content="rightnav" name="right_panel1"></wm-right-panel> 
+    </wm-content> 
+    <wm-footer name="footer" content="footer"></wm-footer> 
 </wm-page>

@@ -1,0 +1,134 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "4368872b-ba23-42c9-b8fb-87b8fda1ecbd",
+    "x-WM-SERVICE_ID" : "wavemakeronline4",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "host" : "www.wavemakeronline.com",
+  "basePath" : "/run-rk7pzg3qc8",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/WebServicesCheck/resources/files/test2.json" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "wavemakeronline4_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/WebServicesCheck/resources/files/test2.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.wavemakeronline4.scheme}://${rest.wavemakeronline4.host}${rest.wavemakeronline4.basepath}/WebServicesCheck/resources/files/test2.json"
+    }
+  },
+  "definitions" : {
+    "dataEntryItemROOTEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.dataEntryItemROOTEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "dataEntryItem" : {
+      "required" : [ "dataEntryItemROOT" ],
+      "properties" : {
+        "dataEntryItemROOT" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "errors" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.errors",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "required" : [ "code", "column_names", "data", "description", "display_url", "errors", "frequency", "from_date", "id", "name", "premium", "source_code", "source_name", "to_date", "type", "updated_at", "urlize_name" ],
+      "properties" : {
+        "display_url" : {
+          "type" : "string"
+        },
+        "code" : {
+          "type" : "string"
+        },
+        "from_date" : {
+          "type" : "string"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "urlize_name" : {
+          "type" : "string"
+        },
+        "premium" : {
+          "type" : "boolean"
+        },
+        "updated_at" : {
+          "type" : "string"
+        },
+        "to_date" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "column_names" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "source_code" : {
+          "type" : "string"
+        },
+        "errors" : {
+          "$ref" : "#/definitions/errors"
+        },
+        "source_name" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline4.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

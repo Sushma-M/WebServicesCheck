@@ -41,6 +41,13 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/MyJavaService/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/WM_live_multipart/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -56,6 +63,13 @@
             <resource>
                 <filtering>true</filtering>
                 <directory>services/WM_live_with_security/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/authService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -125,6 +139,20 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/leaveDB/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/linkedin/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/pdf2image/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -133,6 +161,13 @@
             <resource>
                 <filtering>true</filtering>
                 <directory>services/quandl/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/quandl2/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -209,6 +244,27 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/wavemakeronline2/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/wavemakeronline3/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/wavemakeronline4/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/wavemakeronline_random/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -273,6 +329,11 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>com.wavemaker.studio</groupId>
+                    <artifactId>wavemaker-workspace-sync-plugin</artifactId>
+                    <version>${wavemaker.studio.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -324,9 +385,11 @@
                                 <source>services/CountryInfoService1/src</source>
                                 <source>services/FeedService/src</source>
                                 <source>services/FileService/src</source>
+                                <source>services/MyJavaService/src</source>
                                 <source>services/WM_live_multipart/src</source>
                                 <source>services/WM_live_with_proxy/src</source>
                                 <source>services/WM_live_with_security/src</source>
+                                <source>services/authService/src</source>
                                 <source>services/calc/src</source>
                                 <source>services/emailValidator/src</source>
                                 <source>services/fda_chart/src</source>
@@ -336,8 +399,11 @@
                                 <source>services/googleapis_type/src</source>
                                 <source>services/hrdb/src</source>
                                 <source>services/iconfinder/src</source>
+                                <source>services/leaveDB/src</source>
+                                <source>services/linkedin/src</source>
                                 <source>services/pdf2image/src</source>
                                 <source>services/quandl/src</source>
+                                <source>services/quandl2/src</source>
                                 <source>services/randomuser/src</source>
                                 <source>services/randomuser2/src</source>
                                 <source>services/rechtspraak/src</source>
@@ -348,6 +414,9 @@
                                 <source>services/ripple/src</source>
                                 <source>services/securityService/src</source>
                                 <source>services/wavemakeronline/src</source>
+                                <source>services/wavemakeronline2/src</source>
+                                <source>services/wavemakeronline3/src</source>
+                                <source>services/wavemakeronline4/src</source>
                                 <source>services/wavemakeronline_random/src</source>
                                 <source>services/web2pdf/src</source>
                                 <source>services/websocket_sample/src</source>
@@ -382,8 +451,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <fork>true</fork>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -516,14 +585,19 @@
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
         </dependency>
     </dependencies>
     <dependencyManagement>
@@ -553,8 +627,10 @@
     </dependencyManagement>
     <properties>
         <profile.props.file>development.properties</profile.props.file>
-        <spring.version>4.2.0.RELEASE</spring.version>
-        <spring.security.version>4.1.2.RELEASE</spring.security.version>
-        <wavemaker.studio.version>8.4.2.2</wavemaker.studio.version>
+        <spring.version>4.3.14.RELEASE</spring.version>
+        <spring.security.version>4.2.4.RELEASE</spring.security.version>
+        <wavemaker.studio.version>9.4.0.1</wavemaker.studio.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.lib.directory>${basedir}/lib</project.lib.directory>
     </properties>
 </project>

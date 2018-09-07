@@ -14,7 +14,7 @@
         "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
         "produces" : [ "application/json" ],
         "security" : [ {
-          "WM_Rest_Service_Authorization" : [ ]
+          "basic" : [ ]
         } ],
         "consumes" : [ "text/xml" ],
         "responses" : {
@@ -61,7 +61,7 @@
     }
   },
   "securityDefinitions" : {
-    "WM_Rest_Service_Authorization" : {
+    "basic" : {
       "type" : "basic"
     }
   },

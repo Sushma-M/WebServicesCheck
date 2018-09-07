@@ -1,0 +1,13 @@
+[ {
+  "providerId" : "linkedin",
+  "authorizationUrl" : "https://www.linkedin.com/uas/oauth2/authorization",
+  "accessTokenUrl" : "https://www.linkedin.com/uas/oauth2/accessToken",
+  "clientId" : "81xbjwhijjk6la",
+  "clientSecret" : "TUOXgg9z7ETWG9Ex",
+  "sendAccessTokenAs" : "HEADER",
+  "accessTokenParamName" : "Bearer",
+  "scopes" : [ {
+    "name" : "Basic Profile",
+    "value" : "r_basicprofile"
+  } ]
+} ]

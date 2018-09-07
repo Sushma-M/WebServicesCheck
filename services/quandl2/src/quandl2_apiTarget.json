@@ -1,0 +1,207 @@
+{
+  "basePath" : "${rest.quandl2.basepath}",
+  "paths" : {
+    "/v3/datasets/WIKI/AAPL.json" : {
+      "x-WM-BASE_PATH" : "/v3/datasets/WIKI/AAPL.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "quandl2_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "end_date",
+          "format" : "string",
+          "description" : "end_date",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "api_key",
+          "format" : "string",
+          "description" : "api_key",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "transformation",
+          "format" : "string",
+          "description" : "transformation",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "column_index",
+          "format" : "string",
+          "description" : "column_index",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "collapse",
+          "format" : "string",
+          "description" : "collapse",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "start_date",
+          "format" : "string",
+          "description" : "start_date",
+          "type" : "string",
+          "required" : false
+        }, {
+          "x-WM-EDITABLE" : false,
+          "in" : "query",
+          "name" : "order",
+          "format" : "string",
+          "description" : "order",
+          "type" : "string",
+          "required" : false
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.quandl2.scheme}://${rest.quandl2.host}${rest.quandl2.basepath}/v3/datasets/WIKI/AAPL.json"
+    }
+  },
+  "host" : "${rest.quandl2.host}",
+  "schemes" : [ "${rest.quandl2.scheme}" ],
+  "definitions" : {
+    "dataEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl2.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "dataEntryItemROOT" ],
+      "properties" : {
+        "dataEntryItemROOT" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "format" : "double",
+            "type" : "number"
+          }
+        }
+      }
+    },
+    "dataset" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl2.dataset",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "collapse", "column_index", "column_names", "data", "database_code", "database_id", "dataset_code", "description", "end_date", "frequency", "id", "limit", "name", "newest_available_date", "oldest_available_date", "order", "premium", "refreshed_at", "start_date", "transform", "type" ],
+      "properties" : {
+        "end_date" : {
+          "type" : "string"
+        },
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          }
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "newest_available_date" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "dataset_code" : {
+          "type" : "string"
+        },
+        "column_index" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "oldest_available_date" : {
+          "type" : "string"
+        },
+        "transform" : {
+          "type" : "string"
+        },
+        "premium" : {
+          "type" : "boolean"
+        },
+        "refreshed_at" : {
+          "type" : "string"
+        },
+        "database_id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "database_code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "limit" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "column_names" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "collapse" : {
+          "type" : "string"
+        },
+        "start_date" : {
+          "type" : "string"
+        },
+        "order" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "quandl2.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "dataset" ],
+      "properties" : {
+        "dataset" : {
+          "$ref" : "#/definitions/dataset"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "4ad5f1b1-cdd7-41fb-8310-0c82e5526706",
+    "x-WM-SERVICE_ID" : "quandl2",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

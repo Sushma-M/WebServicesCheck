@@ -1,0 +1,140 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "22531d63-98b6-48e5-8e03-15fee3bde883",
+    "x-WM-SERVICE_ID" : "wavemakeronline3",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "host" : "www.wavemakeronline.com",
+  "basePath" : "/run-rk7pzg3qc8",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/WebServicesCheck/resources/files/test.json" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "wavemakeronline3_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/WebServicesCheck/resources/files/test.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.wavemakeronline3.scheme}://${rest.wavemakeronline3.host}${rest.wavemakeronline3.basepath}/WebServicesCheck/resources/files/test.json"
+    }
+  },
+  "definitions" : {
+    "dataEntryItem" : {
+      "required" : [ "dataEntryItemROOT" ],
+      "properties" : {
+        "dataEntryItemROOT" : {
+          "type" : "array",
+          "items" : {
+            "type" : "number",
+            "format" : "double"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline3.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "required" : [ "collapse", "column_index", "column_names", "data", "database_code", "database_id", "dataset_code", "description", "end_date", "frequency", "id", "limit", "name", "newest_available_date", "oldest_available_date", "order", "premium", "refreshed_at", "start_date", "transform", "type" ],
+      "properties" : {
+        "end_date" : {
+          "type" : "string"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "newest_available_date" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "dataset_code" : {
+          "type" : "string"
+        },
+        "column_index" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "oldest_available_date" : {
+          "type" : "string"
+        },
+        "transform" : {
+          "type" : "string"
+        },
+        "premium" : {
+          "type" : "boolean"
+        },
+        "refreshed_at" : {
+          "type" : "string"
+        },
+        "database_id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "database_code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "limit" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "column_names" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "collapse" : {
+          "type" : "string"
+        },
+        "start_date" : {
+          "type" : "string"
+        },
+        "order" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline3.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

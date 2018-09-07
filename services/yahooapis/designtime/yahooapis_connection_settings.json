@@ -1,22 +1,22 @@
 {
+  "headers" : { },
+  "proxy" : null,
   "endpointAddress" : "https://query.yahooapis.com/v1/public/yql",
   "method" : "GET",
   "requestBody" : "",
-  "headers" : { },
   "queryParams" : {
     "q" : "select * from yahoo.finance.industry where id=\"736\"",
-    "env" : "store://datatables.org/alltableswithkeys",
-    "diagnostics" : "false"
+    "diagnostics" : "false",
+    "env" : "store://datatables.org/alltableswithkeys"
   },
   "sampleHttpResponseDetails" : {
+    "headers" : { },
     "responseBody" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<query xmlns:yahoo=\"http://www.yahooapis.com/v1/base.rng\" yahoo:count=\"1\" yahoo:created=\"2017-05-23T07:03:04Z\" yahoo:lang=\"en-US\"><results><industry id=\"736\" name=\"\"/></results></query><!-- total: 209 -->\n<!-- prod_bf1_1;paas.yql;queryyahooapiscomproductionbf1;e98c311d-2c64-11e7-b972-d4ae52974741 -->\n",
     "convertedResponse" : "{\"results\":{\"industry\":{\"id\":\"736\",\"name\":\"\"}},\"xmlns:yahoo\":\"http://www.yahooapis.com/v1/base.rng\",\"yahoo:count\":\"1\",\"yahoo:created\":\"2017-05-23T07:03:04Z\",\"yahoo:lang\":\"en-US\"}",
-    "statusCode" : 0,
-    "headers" : { }
+    "statusCode" : 0
   },
   "redirectEnabled" : true,
-  "proxy" : null,
-  "authType" : "NONE",
+  "authDetails" : null,
   "contentType" : "text/xml",
   "multiParamInfoList" : null
 }

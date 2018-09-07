@@ -161,7 +161,7 @@
     border-bottom-color: @nav-tabs-border-color;
     background-color: @nav-tabs-bg;
     > li {
-      > a, .app-menu a {
+      > a {
         color: @nav-tabs-color;
         text-transform: uppercase;
         background-color: @nav-tabs-active-link-hover-bg;
@@ -196,7 +196,7 @@
         }
       }
       &.active {
-        > a, .app-menu a {
+        > a {
           border-color: transparent;
           color: @nav-tabs-color-hover;
           &:after {
@@ -212,6 +212,12 @@
             color: @nav-tabs-color-hover;
           }
         }
+      }
+      //Default styles for menu in nav
+      &.app-nav-item > .dropdown > a.dropdown-toggle {
+        padding: @nav-link-padding;
+        color: @nav-tabs-color;
+        text-transform: uppercase;
       }
     }
   }
@@ -736,6 +742,11 @@
         background: transparent;
       }
     }
+    label input:focus {
+      + .caption:before {
+        border: 1px solid #1794ef !important;
+      }
+    }
   }
 
   //radio buttons
@@ -835,10 +846,12 @@
       color: @form-label-color;
     }
     //action buttons in the form
-    .form-action {
+    .panel-footer.form-action {
       background-color: inherit;
       padding: @padding-base-horizontal;
       border-top: 1px solid @panel-inner-border;
+    }
+    .form-action {
       .btn {
         margin: 0 0.333em;
         border-radius: @border-radius-base;
@@ -885,9 +898,11 @@
       margin-bottom: 1em;
       font-weight: bold;
     }
-    .form-action {
+    .panel-footer.form-action {
       padding: @padding-base-horizontal;
       border-top: 1px solid @panel-inner-border;
+    }
+    .form-action {
       .btn {
         margin: 0 0.333em;
         border-radius: @border-radius-base;
@@ -1000,9 +1015,7 @@
     }
     .cell-editing {
       input {
-        border-bottom: 1px solid darken(@table-border-color, 10%);
         background-color: @table-bg;
-        background-image: none;
       }
     }
   }
@@ -1659,8 +1672,7 @@
       width: 13em;
     }
     .input-group-addon {
-      padding: 0.833em 1.333em;
-      background-color: @gray-lighter;
+      height: 98%;
     }
   }
 /***popover class: removing the radius*******/

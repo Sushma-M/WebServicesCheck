@@ -11,6 +11,18 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "Page1",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Pagerename1",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Partial2",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
   "name" : "footer",
   "type" : "FOOTER",
   "params" : [ ]

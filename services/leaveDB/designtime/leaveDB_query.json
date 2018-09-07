@@ -1,0 +1,24 @@
+{
+  "testQuery" : {
+    "name" : "testQuery",
+    "description" : "test",
+    "version" : "V2",
+    "queryString" : "from EmpDetails",
+    "countQueryString" : "select count(*) from EmpDetails",
+    "nativeSql" : false,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.webservicescheck.leavedb.EmpDetails",
+      "returns" : "ENTITY",
+      "responseType" : "PAGINATED"
+    }
+  }
+}

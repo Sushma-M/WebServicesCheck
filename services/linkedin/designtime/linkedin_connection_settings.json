@@ -1,0 +1,40 @@
+{
+  "endpointAddress" : "https://api.linkedin.com/v1/people/~:(id,num-connections,picture-url)",
+  "method" : "GET",
+  "headers" : {
+    "Authorization" : [ "Bearer AQW95bIsax7JE9WM4zr0JkHrjq-toO-I1nWOHCLcz508oqSV66cogcyWiha2HYVnyE_Qw5oeCCMHkpC1dPaEoj4VC3Fv6h-Xn5C2BU247K-arddBuTn1h_mY6Xp3rO7u6yFRz5oSJ7yx3BIq9grRDC7-eG64GJh0Yk3AjDu9-w6n8h4cOpY_JshMXZde_vlwvGkAUD85985Wkzeq7EDxvRNW6mnhCAHxe8GJwEX4ZpXtNplkf0ReSLjpSfZehBYBWAT_8xJPFrLQB422QAUWls_KIx0yt5r8Brs1bLrBeZ3pT5ajweiXawzz9gCTLFzs0B_26Jai6RzAeDwba3GNz7rSZMDmPQ" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "format" : "json"
+  },
+  "authDetails" : {
+    "providerId" : "linkedin",
+    "type" : "OAUTH2"
+  },
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "Apache-Coyote/1.1" ],
+      "x-li-request-id" : [ "EAEK0IQ3WC" ],
+      "Vary" : [ "*" ],
+      "x-li-format" : [ "json" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Date" : [ "Fri, 13 Jul 2018 14:12:42 GMT" ],
+      "X-Li-Fabric" : [ "prod-lsg1" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Connection" : [ "keep-alive" ],
+      "X-Li-Pop" : [ "prod-edc2-nkern" ],
+      "X-LI-Proto" : [ "http/1.1" ],
+      "Set-Cookie" : [ "lidc=\"b=SB46:g=48:u=100:i=1531491162:t=1531577530:s=AQERUQ0R_AFl13WQKi_XO3EiT39UfZUL\"" ],
+      "X-LI-Route-Key" : [ "\"b=SB46:g=48:u=100:i=1531491162:t=1531577530:s=AQERUQ0R_AFl13WQKi_XO3EiT39UfZUL\"" ],
+      "X-LI-UUID" : [ "PyUcJhnzQBVQ+I9/vX8AAA==" ]
+    },
+    "responseBody" : "{\"id\":\"4ET7DSjSDq\",\"numConnections\":0,\"pictureUrl\":\"https://media.licdn.com/dms/image/C4D03AQH8ZyU90cTInA/profile-displayphoto-shrink_100_100/0?e=1536796800&v=beta&t=pIamWN_0YLjkC12TICvYSTtb4VUPfFZn6YkngRZuWVU\"}",
+    "convertedResponse" : null
+  },
+  "proxy" : null
+}

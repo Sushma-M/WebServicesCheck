@@ -148,3 +148,14 @@ Application.$controller("grid15Controller", ["$scope",
 		$scope.ctrlScope = $scope;
 	}
 ]);
+
+
+
+
+
+Application.$controller("executeTestQueryTable1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);

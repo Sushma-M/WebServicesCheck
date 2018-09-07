@@ -1,0 +1,33 @@
+{
+  "endpointAddress" : "https://www.wavemakeronline.com/run-rk7pzg3qc8/WebServicesCheck/services/file/uploadFile",
+  "method" : "POST",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "multipart/form-data",
+  "multiParamInfoList" : [ {
+    "type" : "FILE",
+    "name" : "files",
+    "list" : true,
+    "testValue" : null,
+    "contentType" : null
+  } ],
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "X-XSS-Protection" : [ "1; mode=block" ],
+      "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+      "X-Content-Type-Options" : [ "nosniff" ],
+      "Content-Type" : [ "application/json;charset=UTF-8" ],
+      "Transfer-Encoding" : [ "chunked" ],
+      "Vary" : [ "Accept-Encoding" ],
+      "Date" : [ "Sat, 14 Jul 2018 13:06:47 GMT" ],
+      "Connection" : [ "keep-alive" ]
+    },
+    "responseBody" : "[{\"path\":\"https://www.wavemakeronline.com/run-rk7pzg3qc8/WebServicesCheck/services/file/downloadFile?file=WM_Screenshot_12-07-2018e.png&returnName=WM_Screenshot_12-07-2018e.png\",\"inlinePath\":\"https://www.wavemakeronline.com/run-rk7pzg3qc8/WebServicesCheck/services/file/downloadFileAsInline?file=WM_Screenshot_12-07-2018e.png&returnName=WM_Screenshot_12-07-2018e.png\",\"fileName\":\"WM_Screenshot_12-07-2018e.png\",\"length\":15881,\"success\":true,\"errorMessage\":\"\"}]",
+    "convertedResponse" : null
+  },
+  "proxy" : null
+}

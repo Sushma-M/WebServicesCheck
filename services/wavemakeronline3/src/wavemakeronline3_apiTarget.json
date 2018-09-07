@@ -1,0 +1,140 @@
+{
+  "basePath" : "${rest.wavemakeronline3.basepath}",
+  "paths" : {
+    "/WebServicesCheck/resources/files/test.json" : {
+      "x-WM-BASE_PATH" : "/WebServicesCheck/resources/files/test.json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "get" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "wavemakeronline3_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-COMPLETE_PATH" : "${rest.wavemakeronline3.scheme}://${rest.wavemakeronline3.host}${rest.wavemakeronline3.basepath}/WebServicesCheck/resources/files/test.json"
+    }
+  },
+  "host" : "${rest.wavemakeronline3.host}",
+  "schemes" : [ "${rest.wavemakeronline3.scheme}" ],
+  "definitions" : {
+    "dataEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline3.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "dataEntryItemROOT" ],
+      "properties" : {
+        "dataEntryItemROOT" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "format" : "double",
+            "type" : "number"
+          }
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "wavemakeronline3.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "collapse", "column_index", "column_names", "data", "database_code", "database_id", "dataset_code", "description", "end_date", "frequency", "id", "limit", "name", "newest_available_date", "oldest_available_date", "order", "premium", "refreshed_at", "start_date", "transform", "type" ],
+      "properties" : {
+        "end_date" : {
+          "type" : "string"
+        },
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          }
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "newest_available_date" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "dataset_code" : {
+          "type" : "string"
+        },
+        "column_index" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "frequency" : {
+          "type" : "string"
+        },
+        "oldest_available_date" : {
+          "type" : "string"
+        },
+        "transform" : {
+          "type" : "string"
+        },
+        "premium" : {
+          "type" : "boolean"
+        },
+        "refreshed_at" : {
+          "type" : "string"
+        },
+        "database_id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "database_code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "limit" : {
+          "type" : "string"
+        },
+        "id" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "column_names" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "collapse" : {
+          "type" : "string"
+        },
+        "start_date" : {
+          "type" : "string"
+        },
+        "order" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "x-WM-API_ID" : "22531d63-98b6-48e5-8e03-15fee3bde883",
+    "x-WM-SERVICE_ID" : "wavemakeronline3",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

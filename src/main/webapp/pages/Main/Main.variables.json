@@ -200,6 +200,106 @@
     "isDefault" : true,
     "controller" : "RestServiceVirtual"
   },
+  "HrdbUserData" : {
+    "_id" : "wm-HrdbUserData-wm.LiveVariable-1533620815997",
+    "name" : "HrdbUserData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "User",
+    "isList" : true,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "hrdb",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "orderBy" : "userId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "userId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "USER_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "username",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "USERNAME",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 2
+      }, {
+        "fieldName" : "password",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "PASSWORD",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 2
+      }, {
+        "fieldName" : "role",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ROLE",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 2
+      }, {
+        "fieldName" : "tenantId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "TENANT_ID",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "User",
+      "fullyQualifiedName" : "com.hrdb.User",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "userId" ]
+    },
+    "isDefault" : true,
+    "bindCount" : 1,
+    "tableName" : "USER",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ ]
+    },
+    "package" : "com.hrdb.User"
+  },
   "iconfinderInvoke" : {
     "_id" : "wm-iconfinderInvoke-wm.ServiceVariable-1495524062557",
     "name" : "iconfinderInvoke",
@@ -221,6 +321,88 @@
     "transformationRequired" : false,
     "saveInPhonegap" : false,
     "controller" : "RestServiceVirtual"
+  },
+  "LeaveDBExecuteTestQuery" : {
+    "_id" : "wm-LeaveDBExecuteTestQuery-wm.ServiceVariable-1533622643364",
+    "name" : "LeaveDBExecuteTestQuery",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.webservicescheck.leavedb.EmpDetails",
+    "service" : "leaveDB",
+    "operation" : "executeTestQuery",
+    "operationId" : "QueryExecutionController_executeTestQuery",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "QueryExecution"
+  },
+  "LinkedinInvoke" : {
+    "_id" : "wm-LinkedinInvoke-wm.ServiceVariable-1531491188756",
+    "name" : "LinkedinInvoke",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "format",
+      "value" : "json",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "Authorization",
+      "value" : [ "Bearer AQW95bIsax7JE9WM4zr0JkHrjq-toO-I1nWOHCLcz508oqSV66cogcyWiha2HYVnyE_Qw5oeCCMHkpC1dPaEoj4VC3Fv6h-Xn5C2BU247K-arddBuTn1h_mY6Xp3rO7u6yFRz5oSJ7yx3BIq9grRDC7-eG64GJh0Yk3AjDu9-w6n8h4cOpY_JshMXZde_vlwvGkAUD85985Wkzeq7EDxvRNW6mnhCAHxe8GJwEX4ZpXtNplkf0ReSLjpSfZehBYBWAT_8xJPFrLQB422QAUWls_KIx0yt5r8Brs1bLrBeZ3pT5ajweiXawzz9gCTLFzs0B_26Jai6RzAeDwba3GNz7rSZMDmPQ" ],
+      "type" : "java.lang.String"
+    } ],
+    "type" : "linkedin.RootResponse",
+    "service" : "linkedin",
+    "operation" : "invoke",
+    "operationId" : "linkedin_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "RestServiceVirtual"
+  },
+  "notificationAction1" : {
+    "_id" : "wm-notificationAction1-wm.NotificationVariable-1533620769313",
+    "name" : "notificationAction1",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "test!",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "10000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top left",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
   },
   "Pdf2imageInvoke" : {
     "_id" : "wm-Pdf2imageInvoke-wm.ServiceVariable-1495523623572",
@@ -304,7 +486,11 @@
     "name" : "Randomuser2Invoke",
     "owner" : "Page",
     "category" : "wm.ServiceVariable",
-    "dataBinding" : [ ],
+    "dataBinding" : [ {
+      "target" : "results",
+      "value" : "10",
+      "type" : "string"
+    } ],
     "type" : "randomuser2.RootResponse",
     "service" : "randomuser2",
     "operation" : "invoke",
@@ -520,6 +706,191 @@
     "saveInPhonegap" : false,
     "isDefault" : true,
     "controller" : "RestServiceVirtual"
+  },
+  "serviceVariable1" : {
+    "_id" : "wm-serviceVariable1-wm.ServiceVariable-1531822237852",
+    "name" : "serviceVariable1",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "end_date",
+      "value" : "1997-07-01",
+      "type" : "string"
+    }, {
+      "target" : "api_key",
+      "value" : "3MVGCjyUfrUbFFho4La_",
+      "type" : "string"
+    }, {
+      "target" : "transformation",
+      "value" : "rdiff",
+      "type" : "string"
+    }, {
+      "target" : "column_index",
+      "value" : "4",
+      "type" : "string"
+    }, {
+      "target" : "collapse",
+      "value" : "quarterly",
+      "type" : "string"
+    }, {
+      "target" : "start_date",
+      "value" : "1985-05-01",
+      "type" : "string"
+    }, {
+      "target" : "order",
+      "value" : "asc",
+      "type" : "string"
+    } ],
+    "type" : "quandl2.RootResponse",
+    "service" : "quandl2",
+    "operation" : "invoke",
+    "operationId" : "quandl2_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "columnField" : "dataset.column_names",
+    "dataField" : "dataset.data",
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : true,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual",
+    "transformationColumns" : [ ]
+  },
+  "serviceVariable2" : {
+    "_id" : "wm-serviceVariable2-wm.ServiceVariable-1532500947821",
+    "name" : "serviceVariable2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "results",
+      "value" : "10",
+      "type" : "string"
+    } ],
+    "type" : "randomuser2.RootResponse",
+    "service" : "randomuser2",
+    "operation" : "invoke",
+    "operationId" : "randomuser2_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "serviceVariable3" : {
+    "_id" : "wm-serviceVariable3-wm.ServiceVariable-1531826939679",
+    "name" : "serviceVariable3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "wavemakeronline3.RootResponse",
+    "service" : "wavemakeronline3",
+    "operation" : "invoke",
+    "operationId" : "wavemakeronline3_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "staticVariable1" : {
+    "_id" : "wm-staticVariable1-wm.Variable-1531562653925",
+    "name" : "staticVariable1",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "test"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "staticVariable2" : {
+    "_id" : "wm-staticVariable2-wm.Variable-1531724686171",
+    "name" : "staticVariable2",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "location" : {
+        "lat" : 44.32384807250689,
+        "lng" : -78.079833984375
+      }
+    }, {
+      "location" : {
+        "lat" : 44.55916341529184,
+        "lng" : -76.17919921875
+      }
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "wavemakeronline3" : {
+    "_id" : "wm-serviceVariable2-wm.ServiceVariable-1531826873686",
+    "name" : "wavemakeronline3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "wavemakeronline3.RootResponse",
+    "service" : "wavemakeronline3",
+    "operation" : "invoke",
+    "operationId" : "wavemakeronline3_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "columnField" : "column_names",
+    "dataField" : "data",
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : true,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual",
+    "transformationColumns" : [ "Date", "Close" ]
+  },
+  "wavemakeronline4" : {
+    "_id" : "wm-wavemakeronline4-wm.ServiceVariable-1531827994450",
+    "name" : "wavemakeronline4",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "wavemakeronline4.RootResponse",
+    "service" : "wavemakeronline4",
+    "operation" : "invoke",
+    "operationId" : "wavemakeronline4_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "columnField" : "column_names",
+    "dataField" : "data",
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : true,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual",
+    "transformationColumns" : [ "Date", "Software", "Healthcare", "Hardware", "Biotech", "TELECOM", "Manufacturing", "Financial_Products_and_Services", "IT_Services", "Industrial_Energy", "Retail", "Media" ]
   },
   "web2pdfInvoke" : {
     "_id" : "wm-web2pdfInvoke-wm.ServiceVariable-1495524297348",
